@@ -1,5 +1,11 @@
 ---
+import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Home"> HOME </BaseLayout>
+<BaseLayout title="Home"> <h1>HOME</h1> </BaseLayout>
+
+<script>
+  import { consoleMe } from "../lib/utils";
+  consoleMe();
+</script>
