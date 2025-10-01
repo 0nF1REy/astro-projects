@@ -1,19 +1,22 @@
 ---
 import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Card from "../components/Card";
 ---
 
 <BaseLayout title="Home">
   <h1>HOME</h1>
+  <Card client:only="react" />
 </BaseLayout>
 
 <style>
-  a {
-    color: cyan;
+  h1 {
+    background-color: brown;
+    min-height: 120vh;
   }
 </style>
 
-<script is:inline>
+<script>
   import { consoleMe } from "../lib/utils";
   consoleMe();
 </script>
