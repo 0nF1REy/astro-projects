@@ -1,0 +1,14 @@
+[
+  {
+    "nome": "Leão",
+    "especie": "Panthera leo",
+    "habitat": "Savana africana",
+    "alimentacao": "Carnívoro"
+  },
+  {
+    "nome": "Golfinho",
+    "especie": "Delphinus delphis",
+    "habitat": "Oceanos tropicais e temperados",
+    "alimentacao": "Peixes e lulas"
+  }
+]
