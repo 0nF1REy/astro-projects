@@ -1,0 +1,64 @@
+---
+import pkg from "../../package.json";
+import animals from "../data/sample.json";
+
+let astroVersion = pkg.dependencies.astro;
+
+const my_num = 1;
+
+const my_obj = {
+  name: "Alan",
+  age: 20,
+  city: "Itapeva - SP",
+};
+
+const my_arr = ["Astro", "React", "Svelte", "Vue"];
+
+const req = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+const data = await req.json();
+console.log("~ data: ", data);
+---
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Hello World! - Astro | {my_num + 2024}</h1>
+    <p>Versão do Astro: {astroVersion}</p>
+
+    <h2>Informações do objeto:</h2>
+    <ul>
+      <li><strong>Nome:</strong> {my_obj.name}</li>
+      <li><strong>Idade:</strong> {my_obj.age}</li>
+      <li><strong>Cidade:</strong> {my_obj.city}</li>
+    </ul>
+
+    <h2>Lista de tecnologias ({my_arr.length} itens):</h2>
+    <ul>
+      {my_arr.map((item) => <li>{item}</li>)}
+    </ul>
+
+    <h2>Lista de animais ({animals.length}):</h2>
+    <ul>
+      {
+        animals.map((animal) => (
+          <li>
+            <strong>{animal.nome}</strong> — {animal.especie}
+            <br />
+            Habitat: {animal.habitat}
+            <br />
+            Alimentação: {animal.alimentacao}
+          </li>
+        ))
+      }
+    </ul>
+
+    <h2>Dados da API (JSON Placeholder):</h2>
+    <pre>{JSON.stringify(data, null, 2)}</pre>
+  </body>
+</html>
