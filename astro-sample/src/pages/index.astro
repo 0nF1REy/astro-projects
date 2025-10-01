@@ -3,9 +3,17 @@ import "../styles/global.css";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Home"> <h1>HOME</h1> </BaseLayout>
+<BaseLayout title="Home">
+  <h1>HOME</h1>
+</BaseLayout>
 
-<script>
+<style>
+  a {
+    color: cyan;
+  }
+</style>
+
+<script is:inline>
   import { consoleMe } from "../lib/utils";
   consoleMe();
 </script>
