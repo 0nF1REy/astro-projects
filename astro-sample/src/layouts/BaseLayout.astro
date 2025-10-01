@@ -1,5 +1,7 @@
 ---
+import Link from "../components/Link.astro";
 
+const { title = "Astro" } = Astro.props;
 ---
 
 <html lang="pt-BR">
@@ -8,9 +10,20 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <title>{title}</title>
   </head>
   <body>
-    <slot />
+    <header>
+      <nav>
+        <Link href="/">Home</Link>
+        <Link href="/about">About</Link>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      <p>&copy; 2025 Alan Ryan. Todos os direitos reservados.</p>
+    </footer>
   </body>
 </html>
