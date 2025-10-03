@@ -1,0 +1,47 @@
+---
+import {
+  config,
+  library,
+  icon as faIcon,
+} from "@fortawesome/fontawesome-svg-core";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+
+config.autoAddCss = false;
+library.add(fas, fab);
+
+export interface Props {
+  icon: string | [string, string];
+  className?: string;
+}
+
+const { icon: iconProp, className } = Astro.props;
+
+let prefix = "fas";
+let iconName = "";
+
+if (Array.isArray(iconProp)) {
+  [prefix, iconName] = iconProp;
+} else {
+  iconName = iconProp;
+}
+
+const abstractIcon = faIcon({
+  prefix: prefix as any,
+  iconName: iconName as any,
+});
+
+const svgHtml = abstractIcon ? abstractIcon.html[0] : "";
+---
+
+<span class:list={["icon-container", className]} set:html={svgHtml} />
+
+<style is:inline>
+  .icon-container svg {
+    display: inline-block;
+    height: 1em;
+    width: 1em;
+    fill: currentColor;
+    vertical-align: -0.125em;
+  }
+</style>
