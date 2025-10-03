@@ -11,19 +11,20 @@ config.autoAddCss = false;
 library.add(fas, fab);
 
 export interface Props {
-  icon: string | [string, string];
+  icon: string | readonly [string, string];
   className?: string;
 }
 
 const { icon: iconProp, className } = Astro.props;
 
-let prefix = "fas";
-let iconName = "";
+let prefix: string = "fas";
+let iconName: string = "";
 
 if (Array.isArray(iconProp)) {
-  [prefix, iconName] = iconProp;
+  prefix = iconProp[0];
+  iconName = iconProp[1];
 } else {
-  iconName = iconProp;
+  iconName = iconProp as string;
 }
 
 const abstractIcon = faIcon({
