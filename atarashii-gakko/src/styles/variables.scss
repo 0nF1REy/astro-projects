@@ -1,5 +1,30 @@
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("/assets/fonts/bebasneue.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Courier Prime";
+  src: url("/assets/fonts/courier.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("/assets/fonts/roboto-mono.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --primary-yellow: #fcee09;
+  --secondary-yellow: #f3ec1a;
   --hover-magenta: #fb8dff;
   --background-blue: #2674bb;
 }

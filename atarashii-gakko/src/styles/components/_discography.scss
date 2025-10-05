@@ -1,0 +1,130 @@
+.discography {
+  background-color: var(--background-blue);
+  padding: 4rem 2rem;
+  min-height: 100vh;
+
+  @media (max-width: 768px) {
+    padding: 3rem 1rem;
+  }
+}
+
+.discography__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.discography__tour {
+  text-align: center;
+  margin-bottom: 4rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 3rem;
+  }
+}
+
+.discography__music {
+  text-align: center;
+}
+
+.discography__title {
+  font-family: "Courier New", "courier", monospace;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-yellow);
+  margin-bottom: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+}
+
+.discography__subtitle {
+  font-family: "Roboto Mono", "courier", monospace;
+  font-size: 1.2rem;
+  color: white;
+  margin-bottom: 2rem;
+  letter-spacing: 0.05em;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+}
+
+.discography__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 300px;
+    margin: 3rem auto 0;
+  }
+}
+
+.discography__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.discography__image-container {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.discography__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.discography__item-title {
+  font-family: "Roboto Mono", "courier", monospace;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--secondary-yellow);
+  cursor: pointer;
+  margin-top: 1rem;
+  text-align: center;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+
+  @media (max-width: 768px) {
+    font-size: 0.8rem;
+    margin-top: 0.75rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+    margin-top: 1rem;
+  }
+}

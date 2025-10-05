@@ -1,0 +1,103 @@
+---
+const discographyItems = [
+  {
+    id: "01",
+    image: "/assets/images/discography/01-ag-calling.jpg",
+    title: "AG! Calling",
+  },
+  {
+    id: "02",
+    image: "/assets/images/discography/02-toryanse.jpg",
+    title: "Toryanse",
+  },
+  {
+    id: "03",
+    image: "/assets/images/discography/03-tokyo-calling.jpg",
+    title: "Tokyo Calling",
+  },
+  {
+    id: "04",
+    image: "/assets/images/discography/04-the-edge.jpg",
+    title: "The Edge",
+  },
+  {
+    id: "05",
+    image: "/assets/images/discography/05-woo-go.webp",
+    title: "Woo Go",
+  },
+  {
+    id: "06",
+    image: "/assets/images/discography/06-free-your-mind.webp",
+    title: "Free Your Mind",
+  },
+  {
+    id: "07",
+    image:
+      "/assets/images/discography/07-pineapple-kryptonite-yohji-igarashi-remix.webp",
+    title: "Pineapple Kryptonite (Yohji Igarashi Remix)",
+  },
+  {
+    id: "08",
+    image: "/assets/images/discography/08-ep-snacktime.webp",
+    title: "EP Snacktime",
+  },
+  {
+    id: "09",
+    image: "/assets/images/discography/09-pineapple-kryptonite.jpg",
+    title: "Pineapple Kryptonite",
+  },
+  {
+    id: "10",
+    image: "/assets/images/discography/10-freaks.jpg",
+    title: "Freaks",
+  },
+  {
+    id: "11",
+    image: "/assets/images/discography/11-nainainai.jpg",
+    title: "Nainainai",
+  },
+  {
+    id: "12",
+    image: "/assets/images/discography/12-wakage-ga-itaru.jpg",
+    title: "Wakage ga Itaru",
+  },
+  {
+    id: "13",
+    image: "/assets/images/discography/13-maenarawanai.jpg",
+    title: "Maenarawanai",
+  },
+];
+---
+
+<section class="discography">
+  <div class="discography__container">
+    <!-- Tour Section -->
+    <div class="discography__tour">
+      <h2 class="discography__title">Tour</h2>
+      <p class="discography__subtitle">No shows at this time</p>
+    </div>
+
+    <!-- Music Section -->
+    <div class="discography__music">
+      <h2 class="discography__title">Music</h2>
+
+      <div class="discography__grid">
+        {
+          discographyItems.map((item) => (
+            <div class="discography__item">
+              <div class="discography__image-container">
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  class="discography__image"
+                  loading="lazy"
+                />
+              </div>
+              <h3 class="discography__item-title">{item.title}</h3>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
