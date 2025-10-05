@@ -93,6 +93,8 @@
   border-radius: 4px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: transform 0.2s ease-in-out;
+  display: block;
+  text-decoration: none;
 
   &:hover {
     transform: translateY(-2px);
@@ -107,16 +109,27 @@
   display: block;
 }
 
+.discography__item-title-link {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    .discography__item-title {
+      color: var(--primary-yellow);
+    }
+  }
+}
+
 .discography__item-title {
   font-family: "Roboto Mono", "courier", monospace;
   font-size: 0.9rem;
   font-weight: 400;
   color: var(--secondary-yellow);
-  cursor: pointer;
   margin-top: 1rem;
   text-align: center;
   line-height: 1.4;
   letter-spacing: 0.02em;
+  transition: color 0.2s ease-in-out;
 
   @media (max-width: 768px) {
     font-size: 0.8rem;
