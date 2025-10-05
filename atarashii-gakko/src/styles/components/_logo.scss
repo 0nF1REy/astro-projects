@@ -1,0 +1,35 @@
+.logo-container {
+  position: absolute;
+  bottom: 6%;
+  left: 18%;
+  width: 40%;
+  max-width: 450px;
+  min-width: 280px;
+
+  // MOBILE
+  @media (max-width: 768px) {
+    bottom: 74%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 350px;
+    min-width: 200px;
+  }
+}
+
+.logo-container img {
+  width: 63rem;
+  height: 7rem;
+  display: block;
+
+  // MOBILE
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+    max-height: 5rem;
+  }
+
+  @media (max-width: 480px) {
+    max-height: 4rem;
+  }
+}

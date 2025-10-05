@@ -1,0 +1,26 @@
+.social-nav {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.social-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.social-nav a {
+  color: var(--primary-yellow);
+  font-size: 1.25rem;
+  text-decoration: none;
+  transition: opacity 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--hover-magenta);
+  }
+}
