@@ -131,3 +131,19 @@
     padding-top: 1.5rem;
   }
 }
+
+.desktop-title {
+  display: block;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.mobile-title {
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}

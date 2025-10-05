@@ -29,12 +29,13 @@ const discographyItems = [
     id: "06",
     image: "/assets/images/discography/06-free-your-mind.webp",
     title: "Free Your Mind (Spanish Version)",
+    titleMobile: "Free Your Mind (Spanish<br>Version)",
   },
   {
     id: "07",
     image:
       "/assets/images/discography/07-pineapple-kryptonite-yohji-igarashi-remix.webp",
-    title: "Pineapple Kryptonite (Yohji Igarashi Remix)",
+    title: "Pineapple Kryptonite (Yohji<br>Igarashi Remix)",
   },
   {
     id: "08",
@@ -97,7 +98,21 @@ const discographyItems = [
                 />
               </a>
               <a href="#" class="discography__item-title-link">
-                <h3 class="discography__item-title">{item.title}</h3>
+                <h3 class="discography__item-title">
+                  {item.id === "06" ? (
+                    <>
+                      <span class="desktop-title">
+                        {item.title.replace("<br>", " ")}
+                      </span>
+                      <span
+                        class="mobile-title"
+                        set:html={item.titleMobile || item.title}
+                      />
+                    </>
+                  ) : (
+                    <span set:html={item.title} />
+                  )}
+                </h3>
               </a>
             </div>
           ))
