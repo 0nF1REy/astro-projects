@@ -1,0 +1,127 @@
+---
+import Icon from "../icon/Icon.astro";
+
+const socialLinks = [
+  { href: "#", icon: ["fab", "twitter"] as const, label: "Twitter" },
+  { href: "#", icon: ["fab", "instagram"] as const, label: "Instagram" },
+  { href: "#", icon: ["fab", "facebook-f"] as const, label: "Facebook" },
+  { href: "#", icon: ["fab", "tiktok"] as const, label: "TikTok" },
+  { href: "#", icon: ["fab", "youtube"] as const, label: "YouTube" },
+  { href: "#", icon: ["fab", "spotify"] as const, label: "Spotify" },
+  { href: "#", icon: ["fab", "apple"] as const, label: "Apple Music" },
+];
+
+const countries = [
+  "United States",
+  "Canada",
+  "United Kingdom",
+  "Australia",
+  "Germany",
+  "France",
+  "Japan",
+  "Brazil",
+  "Mexico",
+  "Spain",
+  "Italy",
+  "Netherlands",
+  "Sweden",
+  "Norway",
+  "Denmark",
+  "Finland",
+  "South Korea",
+  "Other",
+];
+---
+
+<section class="newsletter">
+  <div class="newsletter__container">
+    <!-- Logo -->
+    <div class="newsletter__logo">
+      <img src="/assets/images/logo.png" alt="ATARASHII GAKKO! Logo" />
+    </div>
+
+    <!-- Social Icons -->
+    <div class="newsletter__social">
+      {
+        socialLinks.map((link) => (
+          <a
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={link.label}
+          >
+            <Icon icon={link.icon} />
+          </a>
+        ))
+      }
+    </div>
+
+    <!-- Title -->
+    <h2 class="newsletter__title">Sign Up for Updates</h2>
+
+    <!-- Form -->
+    <form class="newsletter__form">
+      <!-- Primeira linha: Nomes -->
+      <div class="newsletter__form-row">
+        <input
+          type="text"
+          placeholder="First Name"
+          class="newsletter__input"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Last Name"
+          class="newsletter__input"
+          required
+        />
+      </div>
+
+      <!-- Segunda linha: E-mail e país -->
+      <div class="newsletter__form-row">
+        <input
+          type="email"
+          placeholder="Email"
+          class="newsletter__input"
+          required
+        />
+        <select class="newsletter__select" required>
+          <option value="">Select Country</option>
+          {
+            countries.map((country) => (
+              <option value={country}>{country}</option>
+            ))
+          }
+        </select>
+      </div>
+
+      <!-- Checkboxes -->
+      <div class="newsletter__checkboxes">
+        <label class="newsletter__checkbox">
+          <input type="checkbox" />
+          <span class="newsletter__checkbox-text">
+            Subscribe to the <strong>ATARASHII GAKKO!</strong> newsletter
+          </span>
+        </label>
+        <label class="newsletter__checkbox">
+          <input type="checkbox" />
+          <span class="newsletter__checkbox-text">
+            Subscribe to the <strong>88rising</strong> newsletter
+          </span>
+        </label>
+      </div>
+
+      <!-- Botão Enviar -->
+      <button type="submit" class="newsletter__submit">SIGN UP</button>
+
+      <!-- Texto de Legalidade -->
+      <p class="newsletter__legal">
+        By signing up, you agree to receive emails from 88rising and accept our
+        <a href="#" class="newsletter__legal-link">Privacy Policy</a>.
+      </p>
+    </form>
+
+    <!-- Copyright -->
+    <p class="newsletter__copyright">© COPYRIGHT 2024 88RISING</p>
+  </div>
+</section>
