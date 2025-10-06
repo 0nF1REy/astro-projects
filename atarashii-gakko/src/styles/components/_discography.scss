@@ -1,6 +1,5 @@
 .discography {
   background-color: var(--background-blue);
-  padding: 4rem 2rem;
   min-height: 100vh;
 
   @media (max-width: 768px) {
@@ -15,7 +14,8 @@
 
 .discography__tour {
   text-align: center;
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
 
   @media (max-width: 768px) {
     margin-bottom: 3rem;
