@@ -18,7 +18,8 @@
   padding-top: 4rem;
 
   @media (max-width: 768px) {
-    margin-bottom: 3rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0rem;
   }
 }
 
@@ -28,7 +29,7 @@
 
 .discography__title {
   font-family: "Courier Prime", "courier", monospace;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
   color: var(--tertiary-yellow);
   margin-bottom: 1rem;
@@ -36,14 +37,10 @@
   line-height: 1;
   margin: 0;
   padding: 0;
+}
 
-  @media (max-width: 768px) {
-    font-size: 2rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 1.5rem;
-  }
+.discography__title--music {
+  font-size: 2rem;
 }
 
 .discography__subtitle {
@@ -55,6 +52,7 @@
   letter-spacing: 0.05em;
 
   @media (max-width: 768px) {
+    padding-top: 2.5em;
     font-size: 1rem;
   }
 }
