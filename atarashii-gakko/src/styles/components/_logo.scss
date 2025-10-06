@@ -1,14 +1,14 @@
 .logo-container {
   position: absolute;
-  bottom: 6%;
-  left: 18%;
+  top: 620px;
+  left: 295px;
   width: 40%;
   max-width: 450px;
   min-width: 280px;
 
   // MOBILE
   @media (max-width: 768px) {
-    bottom: 73%;
+    top: 205px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
