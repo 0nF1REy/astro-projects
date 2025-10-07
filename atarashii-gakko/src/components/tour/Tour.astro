@@ -5,27 +5,79 @@ const tourTitle = "World Tour Dates";
 const tourSubtitle = "No shows at this time";
 
 const tourDates = [
-  { date: "NOV 12", city: "Tokyo, Japan", venue: "Zepp Haneda" },
-  { date: "NOV 15", city: "Osaka, Japan", venue: "Osaka Castle Hall" },
-  { date: "DEC 01", city: "Los Angeles, USA", venue: "Hollywood Palladium" },
-  { date: "DEC 05", city: "New York, USA", venue: "Madison Square Garden" },
-  { date: "DEC 10", city: "London, UK", venue: "O2 Arena" },
-  { date: "DEC 15", city: "Paris, France", venue: "Zenith Paris" },
-  { date: "DEC 20", city: "Berlin, Germany", venue: "Mercedes-Benz Arena" },
-  { date: "JAN 10", city: "Amsterdam, Netherlands", venue: "Ziggo Dome" },
+  {
+    date: "NOV 12",
+    city: "Tokyo, Japan",
+    venue: "Zepp Haneda",
+    ticketUrl: "#",
+  },
+  {
+    date: "NOV 15",
+    city: "Osaka, Japan",
+    venue: "Osaka Castle Hall",
+    ticketUrl: "#",
+  },
+  {
+    date: "DEC 01",
+    city: "Los Angeles, USA",
+    venue: "Hollywood Palladium",
+    ticketUrl: "#",
+  },
+  {
+    date: "DEC 05",
+    city: "New York, USA",
+    venue: "Madison Square Garden",
+    ticketUrl: "#",
+  },
+  { date: "DEC 10", city: "London, UK", venue: "O2 Arena", ticketUrl: "#" },
+  {
+    date: "DEC 15",
+    city: "Paris, France",
+    venue: "Zenith Paris",
+    ticketUrl: "#",
+  },
+  {
+    date: "DEC 20",
+    city: "Berlin, Germany",
+    venue: "Mercedes-Benz Arena",
+    ticketUrl: "#",
+  },
+  {
+    date: "JAN 10",
+    city: "Amsterdam, Netherlands",
+    venue: "Ziggo Dome",
+    ticketUrl: "#",
+  },
   {
     date: "JAN 15",
     city: "Barcelona, Spain",
     venue: "Palau de la Música Catalana",
+    ticketUrl: "#",
   },
-  { date: "JAN 20", city: "Milan, Italy", venue: "Mediolanum Forum" },
+  {
+    date: "JAN 20",
+    city: "Milan, Italy",
+    venue: "Mediolanum Forum",
+    ticketUrl: "#",
+  },
   {
     date: "JAN 25",
     city: "Seoul, South Korea",
     venue: "Olympic Gymnastics Arena",
+    ticketUrl: "#",
   },
-  { date: "FEB 05", city: "Sydney, Australia", venue: "Qudos Bank Arena" },
-  { date: "FEB 15", city: "São Paulo, Brazil", venue: "Allianz Parque" },
+  {
+    date: "FEB 05",
+    city: "Sydney, Australia",
+    venue: "Qudos Bank Arena",
+    ticketUrl: "#",
+  },
+  {
+    date: "FEB 15",
+    city: "São Paulo, Brazil",
+    venue: "Allianz Parque",
+    ticketUrl: "#",
+  },
 ];
 ---
 
@@ -41,7 +93,13 @@ const tourDates = [
               <div class="tour__col tour__col--date">{item.date}</div>
               <div class="tour__col tour__col--city">{item.city}</div>
               <div class="tour__col tour__col--venue">{item.venue}</div>
-              <button class="tour__tickets-btn">TICKETS</button>
+              <a
+                href={item.ticketUrl}
+                class="tour__tickets-btn"
+                rel="noopener noreferrer"
+              >
+                TICKETS
+              </a>
             </li>
           ))}
         </ul>
