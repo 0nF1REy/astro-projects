@@ -1,10 +1,12 @@
 .tour {
   background-color: var(--background-blue);
   padding: 4rem 2rem;
+  padding-bottom: 1.5rem;
   text-align: center;
 
   @media (max-width: 768px) {
     padding: 2rem 1.5rem;
+    padding-bottom: 0;
   }
 }
 
@@ -20,6 +22,10 @@
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-bottom: 2.5rem;
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 }
 
 .tour__subtitle {
