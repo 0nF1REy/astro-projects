@@ -1,12 +1,28 @@
 {
   "name": "astro-sample",
   "type": "module",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
+  },
+  "keywords": [
+    "astro"
+  ],
+  "author": {
+    "name": "Alan Ryan da Silva Domingues",
+    "email": "alanryan619@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/0nF1REy/astro-projects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0nF1REy/astro-projects.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0nF1REy/astro-projects/issues"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.0",
