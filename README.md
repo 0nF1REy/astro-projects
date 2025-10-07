@@ -11,7 +11,55 @@
 
 ## 📖 Descrição
 
-Uma coleção de projetos construídos com [Astro](https://astro.build/), demonstrando diferentes funcionalidades e estilos de desenvolvimento.
+Este repositório reúne projetos desenvolvidos com [Astro](https://astro.build/), um framework moderno para criação de sites estáticos e aplicações web rápidas. Cada projeto demonstra diferentes abordagens de design, organização de código e funcionalidades interativas, oferecendo exemplos práticos de como usar Astro em situações reais.
+
+Atualmente, há um projeto de landing page que inclui componentes interativos e layouts responsivos, seguindo boas práticas de desenvolvimento front-end e arquitetura escalável. Este repositório também pode servir como referência para quem deseja aprender Astro, explorar padrões de design e entender como estruturar projetos de forma clara e organizada.
+
+## 🚀 Projetos
+
+### 🎭 ATARASHII GAKKO! Landing Page
+
+**📁 Pasta:** `atarashii-gakko/`  
+**🎯 Descrição:** Clone da landing page oficial do grupo japonês ATARASHII GAKKO!, apresentando sua discografia mais recente, datas da turnê mundial e cadastro de newsletter.
+
+#### ✨ Funcionalidades
+
+- **🎵 Seção de Discografia:** Exibição visual dos álbuns e singles mais recentes
+- **🌍 Datas da Turnê Mundial:** Lista interativa de shows com informações de venues
+- **📧 Newsletter:** Sistema de cadastro para receber atualizações
+- **📱 Design Responsivo:** Otimizado para dispositivos móveis e desktop
+- **🎨 Interface Moderna:** Uso de SCSS para estilização avançada
+
+#### 🛠️ Tecnologias Utilizadas
+
+- **Framework:** Astro 5.14.1
+- **Estilização:** SCSS/Sass
+- **Ícones:** FontAwesome
+- **Deploy:** Vercel (configurado)
+- **Tipagem:** TypeScript
+
+#### 📂 Estrutura do Projeto
+
+```
+src/
+├── components/           # Componentes reutilizáveis
+│   ├── discography/     # Seção de discografia
+│   ├── hero/           # Banner principal
+│   ├── newsletter/     # Formulário de newsletter
+│   ├── tour/          # Datas de turnê
+│   └── social-nav/    # Navegação social
+├── layouts/           # Layouts base
+├── pages/            # Páginas da aplicação
+├── scripts/          # Scripts JavaScript
+└── styles/           # Estilos SCSS organizados
+```
+
+#### 🎨 Recursos de Design
+
+- **Tipografia Customizada:** Fontes Bebas Neue, Courier e Roboto Mono
+- **Paleta de Cores:** Baseada na identidade visual do grupo
+- **Componentes Modulares:** Arquitetura componentizada para fácil manutenção
+- **Animações Sutis:** Interações visuais aprimoradas
 
 ## 👤 Sobre o Desenvolvedor
 
