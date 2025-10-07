@@ -1,16 +1,6 @@
 ---
 import Icon from "../icon/Icon.astro";
-
-const socialLinks = [
-  { href: "#", icon: ["fas", "tshirt"], label: "Merchandise" },
-  { href: "#", icon: ["fab", "twitter"], label: "Twitter" },
-  { href: "#", icon: ["fab", "instagram"], label: "Instagram" },
-  { href: "#", icon: ["fab", "facebook-f"], label: "Facebook" },
-  { href: "#", icon: ["fab", "tiktok"], label: "TikTok" },
-  { href: "#", icon: ["fab", "youtube"], label: "YouTube" },
-  { href: "#", icon: ["fab", "spotify"], label: "Spotify" },
-  { href: "#", icon: ["fab", "apple"], label: "Apple Music" },
-] as const;
+import { socialLinks } from "../../data/socialLinks";
 ---
 
 <nav class="social-nav">
