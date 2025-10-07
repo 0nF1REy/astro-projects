@@ -4,68 +4,81 @@ const discographyItems = [
     id: "01",
     image: "/assets/images/discography/01-ag-calling.jpg",
     title: "AG! Calling",
+    href: "#",
   },
   {
     id: "02",
     image: "/assets/images/discography/02-toryanse.jpg",
     title: "Toryanse",
+    href: "#",
   },
   {
     id: "03",
     image: "/assets/images/discography/03-tokyo-calling.jpg",
     title: "Tokyo Calling",
+    href: "#",
   },
   {
     id: "04",
     image: "/assets/images/discography/04-the-edge.jpg",
     title: "The Edge",
+    href: "#",
   },
   {
     id: "05",
     image: "/assets/images/discography/05-woo-go.webp",
     title: "WOO! GO!",
+    href: "#",
   },
   {
     id: "06",
     image: "/assets/images/discography/06-free-your-mind.webp",
     title: "Free Your Mind (Spanish Version)",
     titleMobile: "Free Your Mind (Spanish<br>Version)",
+    href: "#",
   },
   {
     id: "07",
     image:
       "/assets/images/discography/07-pineapple-kryptonite-yohji-igarashi-remix.webp",
     title: "Pineapple Kryptonite (Yohji<br>Igarashi Remix)",
+    href: "#",
   },
   {
     id: "08",
     image: "/assets/images/discography/08-ep-snacktime.webp",
     title: "EP SNACKTIME",
+    href: "#",
   },
   {
     id: "09",
     image: "/assets/images/discography/09-pineapple-kryptonite.jpg",
     title: "Pineapple Kryptonite",
+    href: "#",
   },
   {
     id: "10",
     image: "/assets/images/discography/10-freaks.jpg",
     title: "Freaks",
+    href: "#",
   },
   {
     id: "11",
     image: "/assets/images/discography/11-nainainai.jpg",
     title: "NAINAINAI",
+    href: "#",
   },
   {
     id: "12",
     image: "/assets/images/discography/12-wakage-ga-itaru.jpg",
     title: "Wakage Ga Itaru",
+    href: "#",
   },
   {
     id: "13",
     image: "/assets/images/discography/13-maenarawanai.jpg",
     title: "Maenarawanai",
+    href: "#",
   },
 ];
 ---
@@ -80,7 +93,7 @@ const discographyItems = [
         {
           discographyItems.map((item) => (
             <div class="discography__item">
-              <a href="#" class="discography__image-container">
+              <a href={item.href} class="discography__image-container">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -91,7 +104,7 @@ const discographyItems = [
                   height="316"
                 />
               </a>
-              <a href="#" class="discography__item-title-link">
+              <a href={item.href} class="discography__item-title-link">
                 <h3 class="discography__item-title">
                   {item.id === "06" ? (
                     <>
