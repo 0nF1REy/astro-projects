@@ -1,26 +1,105 @@
 .tour {
+  background-color: var(--background-blue);
+  padding: 4rem 2rem;
   text-align: center;
-  padding-bottom: 4rem;
-  padding-top: 4rem;
 
   @media (max-width: 768px) {
-    padding-bottom: 0.5rem;
-    padding-top: 0rem;
+    padding: 2rem 0.5rem;
   }
 }
 
-.tour__title {
-  font-family: "Courier Prime", monospace;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--tertiary-yellow);
-  margin-bottom: 1rem;
-  letter-spacing: 0.1em;
+.tour__container {
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.tour__subtitle {
-  font-family: "Courier Prime", monospace;
-  font-size: 1rem;
+.tour__title {
+  font-family: "Courier Prime", "courier", monospace;
+  font-size: 2.2rem;
+  color: var(--tertiary-yellow);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.tour__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tour__row {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr auto;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: none;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--primary-yellow);
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr 1.5fr 1.5fr auto;
+    gap: 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+    .tour__col--venue,
+    .tour__tickets-btn {
+      grid-column: span 2;
+    }
+  }
+}
+
+.tour__col {
+  font-family: "Bebas Neue", "Courier Prime", monospace;
   color: white;
-  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tour__col--date {
+  font-weight: bold;
+  color: var(--primary-yellow);
+  font-size: 1.15rem;
+}
+
+.tour__col--city {
+  font-weight: 500;
+}
+
+.tour__col--venue {
+  font-family: "Roboto Mono", monospace;
+  font-size: 1rem;
+  color: var(--secondary-yellow);
+  text-transform: uppercase;
+}
+
+.tour__tickets-btn {
+  margin-left: auto;
+  padding: 0.5rem 1.5rem;
+  font-family: "Bebas Neue", "Courier Prime", monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #163bdf;
+  background: #f4a7eb;
+  border: 2px solid var(--background-blue);
+  border-radius: 6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, border 0.2s;
+  box-shadow: 0 2px 8px rgba(251, 141, 255, 0.12);
+
+  &:hover {
+    background: var(--primary-yellow);
+    color: var(--background-blue);
+  }
 }

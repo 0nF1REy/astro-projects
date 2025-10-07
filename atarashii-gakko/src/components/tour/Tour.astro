@@ -1,11 +1,33 @@
 ---
-const tourTitle = "World Tour Dates";
-const tourSubtitle = "No shows at this time";
+const tourDates = [
+  { date: "NOV 12", city: "Tokyo, Japan", venue: "Zepp Haneda" },
+  { date: "NOV 15", city: "Osaka, Japan", venue: "Osaka Castle Hall" },
+  { date: "DEC 01", city: "Los Angeles, USA", venue: "Hollywood Palladium" },
+  { date: "DEC 05", city: "New York, USA", venue: "Madison Square Garden" },
+  { date: "DEC 10", city: "London, UK", venue: "O2 Arena" },
+  { date: "DEC 15", city: "Paris, France", venue: "Zenith Paris" },
+  { date: "DEC 20", city: "Berlin, Germany", venue: "Mercedes-Benz Arena" },
+  { date: "JAN 10", city: "Amsterdam, Netherlands", venue: "Ziggo Dome" },
+  { date: "JAN 15", city: "Barcelona, Spain", venue: "Palau de la Música Catalana" },
+  { date: "JAN 20", city: "Milan, Italy", venue: "Mediolanum Forum" },
+  { date: "JAN 25", city: "Seoul, South Korea", venue: "Olympic Gymnastics Arena" },
+  { date: "FEB 05", city: "Sydney, Australia", venue: "Qudos Bank Arena" },
+  { date: "FEB 15", city: "São Paulo, Brazil", venue: "Allianz Parque" },
+];
 ---
 
 <section class="tour">
   <div class="tour__container">
-    <h2 class="tour__title">{tourTitle}</h2>
-    <p class="tour__subtitle">{tourSubtitle}</p>
+    <h2 class="tour__title">WORLD TOUR DATES</h2>
+    <ul class="tour__list">
+      {tourDates.map((item) => (
+        <li class="tour__row">
+          <div class="tour__col tour__col--date">{item.date}</div>
+          <div class="tour__col tour__col--city">{item.city}</div>
+          <div class="tour__col tour__col--venue">{item.venue}</div>
+          <button class="tour__tickets-btn">TICKETS</button>
+        </li>
+      ))}
+    </ul>
   </div>
 </section>
