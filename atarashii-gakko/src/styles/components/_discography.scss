@@ -34,20 +34,6 @@
   text-transform: uppercase;
 }
 
-.discography__subtitle {
-  font-family: "Courier Prime", "courier", monospace;
-  font-size: 1rem;
-  color: white;
-  padding-bottom: 2em;
-  padding-top: 5.5em;
-  letter-spacing: 0.05em;
-
-  @media (max-width: 768px) {
-    padding-top: 2.5em;
-    font-size: 1rem;
-  }
-}
-
 .discography__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
