@@ -1,7 +1,8 @@
 {
   "name": "atarashii-gakko",
   "type": "module",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "description": "Clone of ATARASHII GAKKO! landing page, featuring their latest discography, world tour dates, and newsletter signup. Built with Astro and SCSS for a modern, responsive experience",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -26,6 +27,7 @@
     "url": "https://github.com/0nF1REy/astro-projects/issues"
   },
   "dependencies": {
+    "@astrojs/vercel": "^8.2.8",
     "@fortawesome/fontawesome-svg-core": "^7.1.0",
     "@fortawesome/free-brands-svg-icons": "^7.1.0",
     "@fortawesome/free-solid-svg-icons": "^7.1.0",
