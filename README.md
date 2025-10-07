@@ -22,6 +22,8 @@ Atualmente, há um projeto de landing page que inclui componentes interativos e 
 **📁 Pasta:** `atarashii-gakko/`  
 **🎯 Descrição:** Clone da landing page oficial do grupo japonês ATARASHII GAKKO!, apresentando sua discografia mais recente, datas da turnê mundial e cadastro de newsletter.
 
+![Banner - Atarashii Gakko](/readme_images/atarashii-gakko.png)
+
 #### ✨ Funcionalidades
 
 - **🎵 Seção de Discografia:** Exibição visual dos álbuns e singles mais recentes
