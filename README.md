@@ -17,6 +17,69 @@ Atualmente, há um projeto de landing page que inclui componentes interativos e 
 
 ## 🚀 Projetos
 
+### 🧪 Astro Sample
+
+**📁 Pasta:** `astro-sample/`  
+**🎯 Descrição:** Projeto de exemplo e experimentação com Astro, demonstrando a integração entre componentes React e Astro, uso de Tailwind CSS e estruturação básica de um projeto web moderno.
+
+![Banner - Astro Sample](/readme_images/astro-sample.png)
+
+#### ✨ Funcionalidades
+
+- **⚛️ Componentes React:** Integração fluida entre componentes React e Astro
+- **🎨 Tailwind CSS:** Framework de CSS utilitário para estilização rápida
+- **📄 Múltiplas Páginas:** Sistema de roteamento baseado em arquivos
+- **🔧 Utilitários TypeScript:** Funções auxiliares com tipagem forte
+- **📊 Consumo de APIs:** Exemplo de fetch de dados externos
+- **📁 Organização Modular:** Estrutura bem definida de componentes e layouts
+
+#### 🛠️ Tecnologias Utilizadas
+
+- **Framework:** Astro 5.14.1
+- **UI Library:** React 19.1.1
+- **Estilização:** Tailwind CSS 4.1.13
+- **Tipagem:** TypeScript
+- **Build Tool:** Vite (integrado ao Astro)
+
+#### 📂 Estrutura do Projeto
+
+```
+src/
+├── components/          # Componentes reutilizáveis
+│   ├── Card.tsx        # Componente React interativo
+│   └── Link.astro      # Componente Astro para navegação
+├── data/               # Dados estáticos
+│   └── sample.json     # Dados de exemplo
+├── layouts/            # Layouts base
+│   └── BaseLayout.astro # Layout principal com navegação
+├── lib/                # Utilitários e funções auxiliares
+│   └── utils.ts        # Funções TypeScript
+├── pages/              # Páginas da aplicação
+│   ├── index.astro     # Página inicial
+│   ├── about.astro     # Página sobre
+│   ├── hello.astro     # Página de demonstração
+│   └── info.md         # Página em Markdown
+└── styles/             # Estilos globais
+    └── global.css      # CSS global
+```
+
+#### 🔬 Recursos Demonstrados
+
+- **Hidratação Seletiva:** Uso de `client:only` para componentes React
+- **Fetch de Dados:** Requisições a APIs externas no server-side
+- **Roteamento Automático:** Sistema de páginas baseado em estrutura de arquivos
+- **Layouts Reutilizáveis:** Template base para consistência visual
+- **Integração de Dados:** Consumo de arquivos JSON locais
+- **Scripts Client-side:** Execução de JavaScript no navegador
+
+#### 🎨 Características Técnicas
+
+- **SSG (Static Site Generation):** Geração estática para performance otimizada
+- **Componentes Híbridos:** Mistura de componentes Astro e React
+- **TypeScript First:** Tipagem forte em todo o projeto
+- **CSS Moderno:** Uso de Tailwind para desenvolvimento ágil
+- **Arquitetura Limpa:** Separação clara entre dados, lógica e apresentação
+
 ### 🎭 ATARASHII GAKKO! Landing Page
 
 **📁 Pasta:** `atarashii-gakko/`  
