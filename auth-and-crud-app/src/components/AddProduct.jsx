@@ -1,37 +1,37 @@
-import {useState} from 'react'
+import { useState } from "react";
 import { db } from "../lib/firebase";
-import {collection, addDoc, Timestamp} from 'firebase/firestore'
+import { collection, addDoc, Timestamp } from "firebase/firestore";
 
-export default function AddProduct(){
-    const [nombre, setNombre] = useState("")
-    const [precio, setPrecio] = useState("")
-    const [descripcion, setDescripcion] = useState("")
-    const [stock, setStock] = useState("")
-    const [loading, setLoading] = useState(false);
-    const [mensaje, setMensaje] = useState("");
+export default function AddProduct() {
+  const [nome, setNome] = useState("");
+  const [preco, setPreco] = useState("");
+  const [descricao, setDescricao] = useState("");
+  const [estoque, setEstoque] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [mensagem, setMensagem] = useState("");
 
-    const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
 
     try {
-      await addDoc(collection(db, "productos"), {
-        nombre,
-        precio: parseFloat(precio),
-        descripcion,
-        stock: parseInt(stock),
-        creado: Timestamp.now()
+      await addDoc(collection(db, "produtos"), {
+        nome,
+        preco: parseFloat(preco),
+        descricao,
+        estoque: parseInt(estoque),
+        criado: Timestamp.now(),
       });
 
-      setMensaje("✅ Producto creado con éxito");
-      setNombre("");
-      setPrecio("");
-      setDescripcion("");
-      setStock("");
+      setMensagem("✅ Produto criado com sucesso");
+      setNome("");
+      setPreco("");
+      setDescricao("");
+      setEstoque("");
       window.location.href = "/products";
     } catch (error) {
-      console.error("Error al agregar producto:", error);
-      setMensaje("❌ Error al crear el producto");
+      console.error("Erro ao adicionar produto:", error);
+      setMensagem("❌ Erro ao criar o produto");
     }
 
     setLoading(false);
@@ -39,44 +39,44 @@ export default function AddProduct(){
 
   return (
     <div className="w-full max-w-sm bg-white rounded-xl shadow p-6 space-y-4">
-      <h2 className="text-xl font-bold text-center">Crear Producto</h2>
+      <h2 className="text-xl font-bold text-center">Criar Produto</h2>
 
-      {mensaje && (
-        <div className="text-center text-sm text-green-600">{mensaje}</div>
+      {mensagem && (
+        <div className="text-center text-sm text-green-600">{mensagem}</div>
       )}
 
       <form onSubmit={handleSubmit} className="space-y-3">
         <input
           type="text"
-          placeholder="Nombre"
+          placeholder="Nome"
           className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
-          value={nombre}
-          onChange={(e) => setNombre(e.target.value)}
+          value={nome}
+          onChange={(e) => setNome(e.target.value)}
           required
         />
 
         <input
           type="number"
-          placeholder="Precio"
+          placeholder="Preço"
           className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
-          value={precio}
-          onChange={(e) => setPrecio(e.target.value)}
+          value={preco}
+          onChange={(e) => setPreco(e.target.value)}
           required
         />
 
         <textarea
-          placeholder="Descripción"
+          placeholder="Descrição"
           className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
-          value={descripcion}
-          onChange={(e) => setDescripcion(e.target.value)}
+          value={descricao}
+          onChange={(e) => setDescricao(e.target.value)}
         />
 
         <input
           type="number"
-          placeholder="Stock"
+          placeholder="Estoque"
           className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
-          value={stock}
-          onChange={(e) => setStock(e.target.value)}
+          value={estoque}
+          onChange={(e) => setEstoque(e.target.value)}
           required
         />
 
@@ -85,7 +85,7 @@ export default function AddProduct(){
           disabled={loading}
           className="w-full bg-sky-600 text-white py-2 rounded hover:bg-sky-700 disabled:opacity-50"
         >
-          {loading ? "Guardando..." : "Guardar Producto"}
+          {loading ? "Salvando..." : "Salvar Produto"}
         </button>
       </form>
     </div>

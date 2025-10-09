@@ -2,23 +2,20 @@ import { useEffect, useState } from "react";
 import { auth, db } from "../lib/firebase";
 import { collection, doc, deleteDoc, getDocs } from "firebase/firestore";
 import { signOut, onAuthStateChanged } from "firebase/auth";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
 export default function Products() {
-  const [products, setProducts] = useState([]);
-
+  const [produtos, setProdutos] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(null); // Usuário autenticado
 
-  const [user, setUser] = useState(null); // usuario autenticado
-
-  // Obtener usuario actual
-
+  // Obter usuário atual
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
         setUser(currentUser);
       } else {
-        // Si no hay usuario → redirigir a login
-
         window.location.href = "/";
       }
     });
@@ -26,94 +23,84 @@ export default function Products() {
     return () => unsubscribe();
   }, []);
 
-  // Traer productos
-
+  // Buscar produtos
   useEffect(() => {
-    const fetchProducts = async () => {
+    const fetchProdutos = async () => {
       setLoading(true);
-
       try {
-        const querySnapshot = await getDocs(collection(db, "productos"));
-
+        const querySnapshot = await getDocs(collection(db, "produtos"));
         const prods = [];
-
         querySnapshot.forEach((doc) => {
           prods.push({ id: doc.id, ...doc.data() });
         });
-
-        setProducts(prods);
+        setProdutos(prods);
       } catch (err) {
-        console.error("Error cargando productos: ", err);
+        console.error("Erro ao carregar produtos: ", err);
       }
-
       setLoading(false);
     };
-
-    fetchProducts();
+    fetchProdutos();
   }, []);
 
-  // Cerrar sesión
-
+  // Logout
   const handleLogout = async () => {
     try {
       await signOut(auth);
-
-      window.location.href = "/"; // redirigir a inicio
+      window.location.href = "/";
     } catch (err) {
-      console.error("Error cerrando sesión:", err);
+      console.error("Erro ao fazer logout:", err);
     }
   };
 
-  //Eliminar producto con confirmacion
+  // Excluir produto
   const handleDelete = async (id) => {
     const confirmar = window.confirm(
-      "¿Estás seguro de eliminar este producto?"
+      "Tem certeza de que deseja excluir este produto?"
     );
     if (!confirmar) return;
 
     try {
-      await deleteDoc(doc(db, "productos", id));
-      setProducts(products.filter((p) => p.id !== id)); // actualizar lista en UI
+      await deleteDoc(doc(db, "produtos", id));
+      setProdutos(produtos.filter((p) => p.id !== id));
     } catch (err) {
-      console.error("Error al eliminar producto:", err);
+      console.error("Erro ao excluir produto:", err);
     }
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-sky-100 px-4 py-6">
-      {/* Header con email y logout */}
-
+      {/* Cabeçalho com email e logout */}
       <div className="w-full max-w-sm flex justify-between items-center mb-6">
         <span className="text-gray-800 font-medium">
-          {user ? `Hola, ${user.email}` : ""}
+          {user ? `Olá, ${user.email}` : ""}
         </span>
 
         <button
           onClick={handleLogout}
           className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-xl font-semibold text-sm transition"
         >
-          Cerrar sesión
+          Sair
         </button>
       </div>
 
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">Productos</h1>
+      <h1 className="text-2xl font-bold text-gray-800 mb-6">Produtos</h1>
 
       <button
         onClick={() => (window.location.href = "/addproduct")}
         className="mb-4 w-full max-w-sm bg-sky-500 hover:bg-sky-600 text-white py-3 rounded-xl font-semibold transition"
       >
-        Añadir Producto
+        Adicionar Produto
       </button>
 
       {loading ? (
-        <p className="text-gray-700">Cargando productos...</p>
-      ) : products.length === 0 ? (
-        <p className="text-gray-700">No hay productos aún.</p>
+        <p className="text-gray-700">Carregando produtos...</p>
+      ) : produtos.length === 0 ? (
+        <p className="text-gray-700">Ainda não há produtos.</p>
       ) : (
         <ul className="w-full max-w-sm space-y-3">
-          {products.map((product) => (           
+          {produtos.map((produto) => (
             <li
-              key={product.id}
+              key={produto.id}
               className="bg-white rounded-xl p-4 shadow flex justify-between items-center"
             >
               <div>
@@ -122,23 +109,23 @@ export default function Products() {
                   onClick={() =>
                     localStorage.setItem(
                       "selectedProduct",
-                      JSON.stringify(product)
+                      JSON.stringify(produto)
                     )
                   }
                 >
                   <span className="text-gray-800 font-medium">
-                    {product.nombre}
+                    {produto.nome}
                   </span>
                 </a>
                 <span className="ml-2 text-gray-500">
-                  {product.precio ? `$${product.precio}` : ""}
+                  {produto.preco ? `R$${produto.preco}` : ""}
                 </span>
               </div>
               <button
-                onClick={() => handleDelete(product.id)}
+                onClick={() => handleDelete(produto.id)}
                 className="ml-4 text-red-500 hover:text-red-700 font-bold"
               >
-                🗑️
+                <FontAwesomeIcon icon={faTrash} />
               </button>
             </li>
           ))}

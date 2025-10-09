@@ -15,6 +15,6 @@ if (!getApps().length) {
   initializeApp(firebaseConfig);
 }
 
-// Exportamos instâncias para usá-las a partir de componentes React (client:load)
+// Exportamento das instâncias para usá-las a partir de componentes React (client:load)
 export const auth = getAuth();
 export const db = getFirestore();

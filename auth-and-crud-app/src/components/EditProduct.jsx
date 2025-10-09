@@ -1,19 +1,19 @@
-import {useState, useEffect} from 'react'
-import {db} from '../lib/firebase'
-import {doc, updateDoc} from 'firebase/firestore'
+import { useState, useEffect } from "react";
+import { db } from "../lib/firebase";
+import { doc, updateDoc } from "firebase/firestore";
 
-export default function EditProduct(){
-    const [product, setProduct] = useState(null)
-    const [loading, setLoading] = useState(false)
-    const [mensaje, setMensaje] = useState("")
+export default function EditProduct() {
+  const [produto, setProduto] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [mensagem, setMensagem] = useState("");
 
-     // Obtener el producto desde localStorage
+  // Obter o produto do localStorage
   useEffect(() => {
-    const stored = localStorage.getItem("selectedProduct");
-    if (stored) {
-      setProduct(JSON.parse(stored));
+    const armazenado = localStorage.getItem("selectedProduct");
+    if (armazenado) {
+      setProduto(JSON.parse(armazenado));
     } else {
-      window.location.href = "/products"; // si no hay producto, redirige
+      window.location.href = "/products"; // Se não houver produto, redireciona
     }
   }, []);
 
@@ -22,69 +22,80 @@ export default function EditProduct(){
     setLoading(true);
 
     try {
-      const ref = doc(db, "productos", product.id);
+      const ref = doc(db, "produtos", produto.id);
       await updateDoc(ref, {
-        nombre: product.nombre,
-        precio: parseFloat(product.precio),
-        descripcion: product.descripcion,
-        stock: parseInt(product.stock),
+        nome: produto.nome,
+        preco: parseFloat(produto.preco),
+        descricao: produto.descricao,
+        estoque: parseInt(produto.estoque),
       });
-      setMensaje("✅ Producto actualizado correctamente");      
+      setMensagem("Produto atualizado com sucesso");
       setTimeout(() => {
         window.location.href = "/products";
       }, 1000);
     } catch (error) {
-      console.error("Error al actualizar producto:", error);
-      setMensaje("❌ Error al actualizar producto");
+      console.error("Erro ao atualizar produto:", error);
+      setMensagem("Erro ao atualizar produto");
     }
 
     setLoading(false);
   };
 
-  if (!product) return <p className="text-center mt-6 text-gray-700">Cargando...</p>;
+  if (!produto)
+    return <p className="text-center mt-6 text-gray-700">Carregando...</p>;
 
   return (
     <div className="min-h-screen flex items-center justify-center px-4 bg-sky-100 py-6">
       <div className="w-full max-w-sm bg-white rounded-2xl shadow-lg p-6 space-y-4">
-        <h2 className="text-2xl font-bold text-center text-gray-800">Actualizar Producto</h2>
+        <h2 className="text-2xl font-bold text-center text-gray-800">
+          Atualizar Produto
+        </h2>
 
-        {mensaje && (
-          <p className={`text-center text-sm ${mensaje.includes("✅") ? "text-green-600" : "text-red-600"}`}>
-            {mensaje}
+        {mensagem && (
+          <p
+            className={`text-center text-sm ${
+              mensagem.includes("✅") ? "text-green-600" : "text-red-600"
+            }`}
+          >
+            {mensagem}
           </p>
         )}
 
         <form onSubmit={handleUpdate} className="space-y-3">
           <input
             type="text"
-            value={product.nombre}
-            onChange={(e) => setProduct({ ...product, nombre: e.target.value })}
-            placeholder="Nombre"
+            value={produto.nome}
+            onChange={(e) => setProduto({ ...produto, nome: e.target.value })}
+            placeholder="Nome"
             className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
             required
           />
 
           <input
             type="number"
-            value={product.precio}
-            onChange={(e) => setProduct({ ...product, precio: e.target.value })}
-            placeholder="Precio"
+            value={produto.preco}
+            onChange={(e) => setProduto({ ...produto, preco: e.target.value })}
+            placeholder="Preço"
             className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
             required
           />
 
           <textarea
-            value={product.descripcion}
-            onChange={(e) => setProduct({ ...product, descripcion: e.target.value })}
-            placeholder="Descripción"
+            value={produto.descricao}
+            onChange={(e) =>
+              setProduto({ ...produto, descricao: e.target.value })
+            }
+            placeholder="Descrição"
             className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
           />
 
           <input
             type="number"
-            value={product.stock}
-            onChange={(e) => setProduct({ ...product, stock: e.target.value })}
-            placeholder="Stock"
+            value={produto.estoque}
+            onChange={(e) =>
+              setProduto({ ...produto, estoque: e.target.value })
+            }
+            placeholder="Estoque"
             className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
             required
           />
@@ -94,7 +105,7 @@ export default function EditProduct(){
             disabled={loading}
             className="w-full bg-sky-600 text-white py-3 rounded-xl font-semibold hover:bg-sky-700 disabled:opacity-50"
           >
-            {loading ? "Actualizando..." : "Actualizar Producto"}
+            {loading ? "Atualizando..." : "Atualizar Produto"}
           </button>
         </form>
       </div>
