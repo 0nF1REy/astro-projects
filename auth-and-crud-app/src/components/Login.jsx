@@ -1,41 +1,44 @@
-import {useState} from 'react'
-import {signInWithEmailAndPassword} from 'firebase/auth'
-import {auth} from '../lib/firebase'
+import { useState } from "react";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../lib/firebase";
 
-export default function LoginForm(){
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+export default function LoginForm() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-    const handleSubmit = async (e) => {
-    e.preventDefault(); // evita recargar la página
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // Evita recarregar a página
     setError("");
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // login correcto → redirigir a /products
+      // Login correto -> redirecionar para /products
       window.location.href = "/products";
     } catch (err) {
-      setError("Email o contraseña incorrectos");
+      setError("Email ou senha incorretos");
       console.error(err);
     }
   };
+
   return (
     <div className="min-h-screen bg-sky-100 flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">Iniciar Sesión</h2>
+        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+          Entrar
+        </h2>
 
         <form className="space-y-4" onSubmit={handleSubmit}>
           <input
             type="email"
-            placeholder="Correo electrónico"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
           />
           <input
             type="password"
-            placeholder="Contraseña"
+            placeholder="Senha"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
@@ -52,9 +55,12 @@ export default function LoginForm(){
         {error && <p className="mt-4 text-red-500 text-center">{error}</p>}
 
         <p className="mt-6 text-center text-gray-600 text-sm">
-          ¿No tienes cuenta?{" "}
-          <a href="/register" className="text-sky-500 font-medium hover:underline">
-            Regístrate
+          Não tem uma conta?{" "}
+          <a
+            href="/register"
+            className="text-sky-500 font-medium hover:underline"
+          >
+            Registre-se
           </a>
         </p>
       </div>

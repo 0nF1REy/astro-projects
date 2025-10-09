@@ -1,4 +1,3 @@
-// src/lib/firebase.js
 import { initializeApp, getApps } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
@@ -16,6 +15,6 @@ if (!getApps().length) {
   initializeApp(firebaseConfig);
 }
 
-// exportamos instancias para usarlas desde componentes React (client:load)
+// Exportamos instâncias para usá-las a partir de componentes React (client:load)
 export const auth = getAuth();
 export const db = getFirestore();

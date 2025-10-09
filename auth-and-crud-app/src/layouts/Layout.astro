@@ -1,16 +1,21 @@
 ---
 import "../styles/global.css";
-const { title = "App CRUD Productos" } = Astro.props;
+const { title = "App CRUD Produtos" } = Astro.props;
 ---
-<html lang="es">
+
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
   </head>
-  <body class="min-h-screen flex items-center justify-center bg-gradient-to-b from-sky-500 to-sky-700">
-    <!-- Aquí simulamos el teléfono -->
-    <main class="w-full max-w-sm min-h-screen bg-white shadow-2xl rounded-none sm:rounded-2xl overflow-hidden">
+  <body
+    class="min-h-screen flex items-center justify-center bg-gradient-to-b from-sky-500 to-sky-700"
+  >
+    <!-- Simulação do celular -->
+    <main
+      class="w-full max-w-sm min-h-screen bg-white shadow-2xl rounded-none sm:rounded-2xl overflow-hidden"
+    >
       <slot />
     </main>
   </body>
