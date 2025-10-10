@@ -1,0 +1,18 @@
+@use "../variables" as vars;
+
+.layout-body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #38bdf8, #0284c7);
+}
+
+.layout-main {
+  width: 100%;
+  max-width: 24rem;
+  min-height: 100vh;
+  background: vars.$color-white;
+  box-shadow: vars.$shadow-lg;
+  overflow: hidden;
+}

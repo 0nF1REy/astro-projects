@@ -1,10 +1,12 @@
+@use "../variables" as vars;
+
 .products-container {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #f1f5f9;
-  padding: 2rem 1rem;
+  background: vars.$color-bg;
+  padding: vars.$padding-lg 1rem;
 }
 
 .products-header {
@@ -17,15 +19,15 @@
 }
 
 .products-header span {
-  color: #1e293b;
+  color: vars.$color-text-dark;
   font-weight: 500;
 }
 
 .products-header button {
-  background: #ef4444;
-  color: #fff;
+  background: vars.$color-danger;
+  color: vars.$color-white;
   border: none;
-  border-radius: 0.75rem;
+  border-radius: vars.$border-radius;
   padding: 0.5rem 1rem;
   font-size: 0.95rem;
   font-weight: 600;
@@ -34,25 +36,25 @@
 }
 
 .products-header button:hover {
-  background: #dc2626;
+  background: vars.$color-danger-hover;
 }
 
 .products-title {
-  font-size: 1.5rem;
+  font-size: vars.$font-size-xl;
   font-weight: bold;
-  color: #1e293b;
+  color: vars.$color-text-dark;
   margin-bottom: 1.5rem;
 }
 
 .products-add-btn {
   width: 100%;
   max-width: 400px;
-  background: #0ea5e9;
-  color: #fff;
+  background: vars.$color-primary;
+  color: vars.$color-white;
   border: none;
-  border-radius: 0.75rem;
-  padding: 1rem;
-  font-size: 1rem;
+  border-radius: vars.$border-radius;
+  padding: vars.$padding-base;
+  font-size: vars.$font-size-base;
   font-weight: 600;
   margin-bottom: 1rem;
   cursor: pointer;
@@ -60,7 +62,7 @@
 }
 
 .products-add-btn:hover {
-  background: #0369a1;
+  background: vars.$color-primary-hover;
 }
 
 .products-list {
@@ -72,9 +74,9 @@
 }
 
 .products-list li {
-  background: #fff;
-  border-radius: 0.75rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  background: vars.$color-white;
+  border-radius: vars.$border-radius;
+  box-shadow: vars.$shadow-base;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -83,19 +85,19 @@
 }
 
 .products-list .produto-nome {
-  color: #1e293b;
+  color: vars.$color-text-dark;
   font-weight: 500;
 }
 
 .products-list .produto-preco {
   margin-left: 0.5rem;
-  color: #64748b;
+  color: vars.$color-text-light;
 }
 
 .products-list .delete-btn {
   background: none;
   border: none;
-  color: #ef4444;
+  color: vars.$color-danger;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
@@ -104,5 +106,5 @@
 }
 
 .products-list .delete-btn:hover {
-  color: #dc2626;
+  color: vars.$color-danger-hover;
 }

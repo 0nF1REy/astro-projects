@@ -1,9 +1,44 @@
-@use "./components/" as components;
+@use "./variables" as vars;
+@use "./components";
 
+// Reset básico
 *,
 *::before,
 *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+// Tipografia global
+body {
+  font-family: vars.$font-stack;
+  background: vars.$color-bg;
+  color: vars.$color-text-dark;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: vars.$color-text-dark;
+  font-weight: bold;
+}
+
+a {
+  color: vars.$color-primary;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: vars.$color-primary-hover;
+}
+
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: vars.$padding-lg;
 }

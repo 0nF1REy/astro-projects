@@ -1,0 +1,55 @@
+// Fonts
+$font-stack: "Inter", Arial, sans-serif;
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("/assets/fonts/bebasneue.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Courier Prime";
+  src: url("/assets/fonts/courier.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Roboto Mono";
+  src: url("/assets/fonts/roboto-mono.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Colors
+$color-primary: #0ea5e9;
+$color-primary-hover: #0369a1;
+$color-secondary: #f3f4f6;
+$color-secondary-hover: #e5e7eb;
+$color-danger: #ef4444;
+$color-danger-hover: #dc2626;
+$color-success: #059669;
+$color-text-dark: #1e293b;
+$color-text-light: #64748b;
+$color-bg: #f1f5f9;
+$color-white: #ffffff;
+
+// Borders & padding
+$border-radius: 0.75rem;
+$border-radius-lg: 1rem;
+$padding-base: 0.75rem;
+$padding-lg: 2rem;
+
+// Font sizes
+$font-size-base: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-xl: 1.5rem;
+$font-size-2xl: 2rem;
+
+// Shadows
+$shadow-base: 0 2px 8px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 2px 16px rgba(0, 0, 0, 0.08);
