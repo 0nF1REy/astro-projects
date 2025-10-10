@@ -1,0 +1,58 @@
+@use "../variables" as vars;
+
+.product-form {
+  background: vars.$color-white;
+  border-radius: vars.$border-radius-lg;
+  box-shadow: vars.$shadow-lg;
+  padding: vars.$padding-lg;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.product-form h2 {
+  text-align: center;
+  font-size: vars.$font-size-lg;
+  font-weight: bold;
+  margin-bottom: vars.$padding-lg;
+}
+
+.product-form input,
+.product-form textarea {
+  width: 100%;
+  padding: vars.$padding-base;
+  border-radius: vars.$border-radius;
+  border: 1px solid vars.$color-secondary;
+  margin-bottom: vars.$padding-base;
+  font-size: vars.$font-size-base;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.product-form input:focus,
+.product-form textarea:focus {
+  border-color: vars.$color-primary;
+}
+
+.product-form button {
+  width: 100%;
+  background: vars.$color-primary;
+  color: vars.$color-white;
+  font-weight: 600;
+  border: none;
+  border-radius: vars.$border-radius;
+  padding: vars.$padding-base;
+  font-size: vars.$font-size-base;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.product-form button:hover {
+  background: vars.$color-primary-hover;
+}
+
+.product-form .mensagem {
+  text-align: center;
+  font-size: 0.95rem;
+  color: vars.$color-success;
+  margin-bottom: vars.$padding-base;
+}

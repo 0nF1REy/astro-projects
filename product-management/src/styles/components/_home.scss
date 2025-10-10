@@ -1,0 +1,67 @@
+@use "../variables" as vars;
+
+.home-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: vars.$padding-lg 1rem;
+  gap: vars.$padding-lg;
+}
+
+.home-title {
+  font-size: vars.$font-size-2xl;
+  font-weight: bold;
+  color: vars.$color-text-dark;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.home-desc {
+  text-align: center;
+  color: vars.$color-text-light;
+  font-size: vars.$font-size-base;
+  margin-bottom: vars.$padding-lg;
+}
+
+.home-btns {
+  display: flex;
+  flex-direction: column;
+  gap: vars.$padding-base;
+  width: 100%;
+  max-width: 400px;
+}
+
+.home-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  border-radius: vars.$border-radius;
+  font-weight: 600;
+  font-size: vars.$font-size-base;
+  box-shadow: vars.$shadow-base;
+  transition: background 0.2s, color 0.2s;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.home-btn.login {
+  background: vars.$color-primary;
+  color: vars.$color-white;
+}
+
+.home-btn.login:hover {
+  background: vars.$color-primary-hover;
+}
+
+.home-btn.register {
+  background: vars.$color-secondary;
+  color: vars.$color-text-dark;
+}
+
+.home-btn.register:hover {
+  background: vars.$color-secondary-hover;
+}

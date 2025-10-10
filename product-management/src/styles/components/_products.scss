@@ -1,0 +1,110 @@
+@use "../variables" as vars;
+
+.products-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: vars.$color-bg;
+  padding: vars.$padding-lg 1rem;
+}
+
+.products-header {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.products-header span {
+  color: vars.$color-text-dark;
+  font-weight: 500;
+}
+
+.products-header button {
+  background: vars.$color-danger;
+  color: vars.$color-white;
+  border: none;
+  border-radius: vars.$border-radius;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.products-header button:hover {
+  background: vars.$color-danger-hover;
+}
+
+.products-title {
+  font-size: vars.$font-size-xl;
+  font-weight: bold;
+  color: vars.$color-text-dark;
+  margin-bottom: 1.5rem;
+}
+
+.products-add-btn {
+  width: 100%;
+  max-width: 400px;
+  background: vars.$color-primary;
+  color: vars.$color-white;
+  border: none;
+  border-radius: vars.$border-radius;
+  padding: vars.$padding-base;
+  font-size: vars.$font-size-base;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.products-add-btn:hover {
+  background: vars.$color-primary-hover;
+}
+
+.products-list {
+  width: 100%;
+  max-width: 400px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.products-list li {
+  background: vars.$color-white;
+  border-radius: vars.$border-radius;
+  box-shadow: vars.$shadow-base;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.products-list .produto-nome {
+  color: vars.$color-text-dark;
+  font-weight: 500;
+}
+
+.products-list .produto-preco {
+  margin-left: 0.5rem;
+  color: vars.$color-text-light;
+}
+
+.products-list .delete-btn {
+  background: none;
+  border: none;
+  color: vars.$color-danger;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 1rem;
+  transition: color 0.2s;
+}
+
+.products-list .delete-btn:hover {
+  color: vars.$color-danger-hover;
+}

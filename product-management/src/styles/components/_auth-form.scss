@@ -1,0 +1,72 @@
+@use "../variables" as vars;
+
+.auth-form {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: vars.$color-white;
+  border-radius: vars.$border-radius-lg;
+  box-shadow: vars.$shadow-lg;
+  padding: vars.$padding-lg;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.auth-form h2 {
+  text-align: center;
+  font-size: vars.$font-size-2xl;
+  font-weight: bold;
+  margin-bottom: vars.$padding-lg;
+}
+
+.auth-form input {
+  width: 100%;
+  padding: vars.$padding-base;
+  border-radius: vars.$border-radius;
+  border: 1px solid vars.$color-secondary;
+  margin-bottom: vars.$padding-base;
+  font-size: vars.$font-size-base;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.auth-form input:focus {
+  border-color: vars.$color-primary;
+}
+
+.auth-form button {
+  width: 100%;
+  background: vars.$color-primary;
+  color: vars.$color-white;
+  font-weight: 600;
+  border: none;
+  border-radius: vars.$border-radius;
+  padding: vars.$padding-base;
+  font-size: vars.$font-size-base;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.auth-form button:hover {
+  background: vars.$color-primary-hover;
+}
+
+.auth-form .mensagem {
+  text-align: center;
+  font-size: 0.95rem;
+  color: vars.$color-danger;
+  margin-bottom: vars.$padding-base;
+}
+
+.auth-form .link {
+  text-align: center;
+  margin-top: vars.$padding-lg;
+  font-size: 0.95rem;
+}
+
+.auth-form .link a {
+  color: vars.$color-primary;
+  text-decoration: underline;
+}
