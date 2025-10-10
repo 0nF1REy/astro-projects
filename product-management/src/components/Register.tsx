@@ -3,11 +3,11 @@ import { auth } from "../lib/firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function RegisterForm() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [error, setError] = useState<string>("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
 
@@ -15,7 +15,7 @@ export default function RegisterForm() {
       await createUserWithEmailAndPassword(auth, email, password);
       // Registro bem-sucedido -> redirecionar para /products
       window.location.href = "/products";
-    } catch (err) {
+    } catch (err: any) {
       setError(err.message);
       console.error(err);
     }
@@ -47,7 +47,6 @@ export default function RegisterForm() {
 
           <button
             type="submit"
-            onClick={handleSubmit}
             className="w-full bg-sky-500 hover:bg-sky-600 text-white font-medium rounded-xl py-3 text-lg"
           >
             Registrar-se

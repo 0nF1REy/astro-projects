@@ -2,13 +2,22 @@ import { useEffect, useState } from "react";
 import { auth, db } from "../lib/firebase";
 import { collection, doc, deleteDoc, getDocs } from "firebase/firestore";
 import { signOut, onAuthStateChanged } from "firebase/auth";
+import type { User } from "firebase/auth";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
+type Produto = {
+  id: string;
+  nome: string;
+  preco: number;
+  descricao: string;
+  estoque: number;
+};
+
 export default function Products() {
-  const [produtos, setProdutos] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState(null); // Usuário autenticado
+  const [produtos, setProdutos] = useState<Produto[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [user, setUser] = useState<User | null>(null); // Usuário autenticado
 
   // Obter usuário atual
   useEffect(() => {
@@ -29,9 +38,16 @@ export default function Products() {
       setLoading(true);
       try {
         const querySnapshot = await getDocs(collection(db, "produtos"));
-        const prods = [];
+        const prods: Produto[] = [];
         querySnapshot.forEach((doc) => {
-          prods.push({ id: doc.id, ...doc.data() });
+          const data = doc.data();
+          prods.push({
+            id: doc.id,
+            nome: data.nome,
+            preco: data.preco,
+            descricao: data.descricao,
+            estoque: data.estoque,
+          });
         });
         setProdutos(prods);
       } catch (err) {
@@ -53,7 +69,7 @@ export default function Products() {
   };
 
   // Excluir produto
-  const handleDelete = async (id) => {
+  const handleDelete = async (id: string) => {
     const confirmar = window.confirm(
       "Tem certeza de que deseja excluir este produto?"
     );

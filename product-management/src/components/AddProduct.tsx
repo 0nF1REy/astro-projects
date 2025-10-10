@@ -3,14 +3,14 @@ import { db } from "../lib/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 export default function AddProduct() {
-  const [nome, setNome] = useState("");
-  const [preco, setPreco] = useState("");
-  const [descricao, setDescricao] = useState("");
-  const [estoque, setEstoque] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [mensagem, setMensagem] = useState("");
+  const [nome, setNome] = useState<string>("");
+  const [preco, setPreco] = useState<string>("");
+  const [descricao, setDescricao] = useState<string>("");
+  const [estoque, setEstoque] = useState<string>("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [mensagem, setMensagem] = useState<string>("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
 
@@ -23,7 +23,7 @@ export default function AddProduct() {
         criado: Timestamp.now(),
       });
 
-      setMensagem("✅ Produto criado com sucesso");
+      setMensagem("Produto criado com sucesso");
       setNome("");
       setPreco("");
       setDescricao("");
@@ -31,7 +31,7 @@ export default function AddProduct() {
       window.location.href = "/products";
     } catch (error) {
       console.error("Erro ao adicionar produto:", error);
-      setMensagem("❌ Erro ao criar o produto");
+      setMensagem("Erro ao criar o produto");
     }
 
     setLoading(false);

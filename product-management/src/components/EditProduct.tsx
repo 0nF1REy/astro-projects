@@ -2,10 +2,18 @@ import { useState, useEffect } from "react";
 import { db } from "../lib/firebase";
 import { doc, updateDoc } from "firebase/firestore";
 
+type Produto = {
+  id: string;
+  nome: string;
+  preco: string;
+  descricao: string;
+  estoque: string;
+};
+
 export default function EditProduct() {
-  const [produto, setProduto] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [mensagem, setMensagem] = useState("");
+  const [produto, setProduto] = useState<Produto | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [mensagem, setMensagem] = useState<string>("");
 
   // Obter o produto do localStorage
   useEffect(() => {
@@ -17,9 +25,11 @@ export default function EditProduct() {
     }
   }, []);
 
-  const handleUpdate = async (e) => {
+  const handleUpdate = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
+
+    if (!produto) return;
 
     try {
       const ref = doc(db, "produtos", produto.id);
