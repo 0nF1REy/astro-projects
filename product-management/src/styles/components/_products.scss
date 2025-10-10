@@ -1,0 +1,108 @@
+.products-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f1f5f9;
+  padding: 2rem 1rem;
+}
+
+.products-header {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.products-header span {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.products-header button {
+  background: #ef4444;
+  color: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.products-header button:hover {
+  background: #dc2626;
+}
+
+.products-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+}
+
+.products-add-btn {
+  width: 100%;
+  max-width: 400px;
+  background: #0ea5e9;
+  color: #fff;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.products-add-btn:hover {
+  background: #0369a1;
+}
+
+.products-list {
+  width: 100%;
+  max-width: 400px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.products-list li {
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.products-list .produto-nome {
+  color: #1e293b;
+  font-weight: 500;
+}
+
+.products-list .produto-preco {
+  margin-left: 0.5rem;
+  color: #64748b;
+}
+
+.products-list .delete-btn {
+  background: none;
+  border: none;
+  color: #ef4444;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 1rem;
+  transition: color 0.2s;
+}
+
+.products-list .delete-btn:hover {
+  color: #dc2626;
+}

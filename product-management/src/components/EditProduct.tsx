@@ -52,73 +52,58 @@ export default function EditProduct() {
   };
 
   if (!produto)
-    return <p className="text-center mt-6 text-gray-700">Carregando...</p>;
+    return <p className="mensagem">Carregando...</p>;
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4 bg-sky-100 py-6">
-      <div className="w-full max-w-sm bg-white rounded-2xl shadow-lg p-6 space-y-4">
-        <h2 className="text-2xl font-bold text-center text-gray-800">
-          Atualizar Produto
-        </h2>
+    <div className="product-form">
+      <h2>Atualizar Produto</h2>
 
-        {mensagem && (
-          <p
-            className={`text-center text-sm ${
-              mensagem.includes("✅") ? "text-green-600" : "text-red-600"
-            }`}
-          >
-            {mensagem}
-          </p>
-        )}
+      {mensagem && (
+        <p className="mensagem">{mensagem}</p>
+      )}
 
-        <form onSubmit={handleUpdate} className="space-y-3">
-          <input
-            type="text"
-            value={produto.nome}
-            onChange={(e) => setProduto({ ...produto, nome: e.target.value })}
-            placeholder="Nome"
-            className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
-            required
-          />
+      <form onSubmit={handleUpdate}>
+        <input
+          type="text"
+          value={produto.nome}
+          onChange={(e) => setProduto({ ...produto, nome: e.target.value })}
+          placeholder="Nome"
+          required
+        />
 
-          <input
-            type="number"
-            value={produto.preco}
-            onChange={(e) => setProduto({ ...produto, preco: e.target.value })}
-            placeholder="Preço"
-            className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
-            required
-          />
+        <input
+          type="number"
+          value={produto.preco}
+          onChange={(e) => setProduto({ ...produto, preco: e.target.value })}
+          placeholder="Preço"
+          required
+        />
 
-          <textarea
-            value={produto.descricao}
-            onChange={(e) =>
-              setProduto({ ...produto, descricao: e.target.value })
-            }
-            placeholder="Descrição"
-            className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
-          />
+        <textarea
+          value={produto.descricao}
+          onChange={(e) =>
+            setProduto({ ...produto, descricao: e.target.value })
+          }
+          placeholder="Descrição"
+        />
 
-          <input
-            type="number"
-            value={produto.estoque}
-            onChange={(e) =>
-              setProduto({ ...produto, estoque: e.target.value })
-            }
-            placeholder="Estoque"
-            className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
-            required
-          />
+        <input
+          type="number"
+          value={produto.estoque}
+          onChange={(e) =>
+            setProduto({ ...produto, estoque: e.target.value })
+          }
+          placeholder="Estoque"
+          required
+        />
 
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full bg-sky-600 text-white py-3 rounded-xl font-semibold hover:bg-sky-700 disabled:opacity-50"
-          >
-            {loading ? "Atualizando..." : "Atualizar Produto"}
-          </button>
-        </form>
-      </div>
+        <button
+          type="submit"
+          disabled={loading}
+        >
+          {loading ? "Atualizando..." : "Atualizar Produto"}
+        </button>
+      </form>
     </div>
   );
 }

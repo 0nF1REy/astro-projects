@@ -1,6 +1,11 @@
 ---
-import "../styles/global.css";
-const { title = "Product Management" } = Astro.props;
+import "../styles/global.scss";
+
+interface LayoutProps {
+  title?: string;
+}
+
+const { title = "Product Management" } = Astro.props as LayoutProps;
 ---
 
 <html lang="pt">

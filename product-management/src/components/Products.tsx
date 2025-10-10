@@ -84,41 +84,21 @@ export default function Products() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center bg-sky-100 px-4 py-6">
-      {/* Cabeçalho com email e logout */}
-      <div className="w-full max-w-sm flex justify-between items-center mb-6">
-        <span className="text-gray-800 font-medium">
-          {user ? `Olá, ${user.email}` : ""}
-        </span>
-
-        <button
-          onClick={handleLogout}
-          className="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-xl font-semibold text-sm transition"
-        >
-          Sair
-        </button>
+    <div className="products-container">
+      <div className="products-header">
+        <span>{user ? `Olá, ${user.email}` : ""}</span>
+        <button onClick={handleLogout}>Sair</button>
       </div>
-
-      <h1 className="text-2xl font-bold text-gray-800 mb-6">Produtos</h1>
-
-      <button
-        onClick={() => (window.location.href = "/addproduct")}
-        className="mb-4 w-full max-w-sm bg-sky-500 hover:bg-sky-600 text-white py-3 rounded-xl font-semibold transition"
-      >
-        Adicionar Produto
-      </button>
-
+      <h1 className="products-title">Produtos</h1>
+      <button className="products-add-btn" onClick={() => (window.location.href = "/addproduct")}>Adicionar Produto</button>
       {loading ? (
-        <p className="text-gray-700">Carregando produtos...</p>
+        <p>Carregando produtos...</p>
       ) : produtos.length === 0 ? (
-        <p className="text-gray-700">Ainda não há produtos.</p>
+        <p>Ainda não há produtos.</p>
       ) : (
-        <ul className="w-full max-w-sm space-y-3">
+        <ul className="products-list">
           {produtos.map((produto) => (
-            <li
-              key={produto.id}
-              className="bg-white rounded-xl p-4 shadow flex justify-between items-center"
-            >
+            <li key={produto.id}>
               <div>
                 <a
                   href={`/editproduct`}
@@ -129,18 +109,13 @@ export default function Products() {
                     )
                   }
                 >
-                  <span className="text-gray-800 font-medium">
-                    {produto.nome}
-                  </span>
+                  <span className="produto-nome">{produto.nome}</span>
                 </a>
-                <span className="ml-2 text-gray-500">
+                <span className="produto-preco">
                   {produto.preco ? `R$${produto.preco}` : ""}
                 </span>
               </div>
-              <button
-                onClick={() => handleDelete(produto.id)}
-                className="ml-4 text-red-500 hover:text-red-700 font-bold"
-              >
+              <button className="delete-btn" onClick={() => handleDelete(produto.id)}>
                 <FontAwesomeIcon icon={faTrash} />
               </button>
             </li>

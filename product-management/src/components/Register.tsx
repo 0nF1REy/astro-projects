@@ -22,45 +22,34 @@ export default function RegisterForm() {
   };
 
   return (
-    <div className="min-h-screen bg-sky-100 flex items-center justify-center px-4">
-      <div className="w-full max-w-sm">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-6">
+    <div className="auth-form">
+      <h2>Registrar-se</h2>
+
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Senha"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button type="submit">
           Registrar-se
-        </h2>
+        </button>
+      </form>
 
-        <form className="space-y-4" onSubmit={handleSubmit}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Senha"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-400"
-          />
+      {error && <p className="mensagem">{error}</p>}
 
-          <button
-            type="submit"
-            className="w-full bg-sky-500 hover:bg-sky-600 text-white font-medium rounded-xl py-3 text-lg"
-          >
-            Registrar-se
-          </button>
-        </form>
-
-        {error && <p className="mt-4 text-red-500 text-center">{error}</p>}
-
-        <p className="mt-6 text-center text-gray-600 text-sm">
-          Já tem uma conta?{" "}
-          <a href="/login" className="text-sky-500 font-medium hover:underline">
-            Entrar
-          </a>
-        </p>
+      <div className="link">
+        Já tem uma conta?{' '}
+        <a href="/login">Entrar</a>
       </div>
     </div>
   );

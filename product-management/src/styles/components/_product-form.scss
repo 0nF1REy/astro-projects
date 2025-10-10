@@ -1,0 +1,56 @@
+.product-form {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.product-form h2 {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.product-form input,
+.product-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.product-form input:focus,
+.product-form textarea:focus {
+  border-color: #0ea5e9;
+}
+
+.product-form button {
+  width: 100%;
+  background: #0ea5e9;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.product-form button:hover {
+  background: #0369a1;
+}
+
+.product-form .mensagem {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #059669;
+  margin-bottom: 1rem;
+}
