@@ -23,6 +23,11 @@ export default function LoginForm() {
 
   return (
     <div className="auth-form">
+      <img
+        src="/assets/images/product-management-logotipo.png"
+        alt="Logo"
+        className="logo"
+      />
       <h2>Entrar</h2>
 
       <form onSubmit={handleSubmit}>
@@ -39,16 +44,13 @@ export default function LoginForm() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button type="submit">
-          Entrar
-        </button>
+        <button type="submit">Entrar</button>
       </form>
 
       {error && <p className="mensagem">{error}</p>}
 
       <div className="link">
-        Não tem uma conta?{' '}
-        <a href="/register">Registre-se</a>
+        Não tem uma conta? <a href="/register">Registre-se</a>
       </div>
     </div>
   );
