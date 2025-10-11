@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { db } from "../lib/firebase";
 import { doc, updateDoc } from "firebase/firestore";
+import { auth } from "../lib/firebase";
 
 type Produto = {
   id: string;
@@ -32,7 +33,9 @@ export default function EditProduct() {
     if (!produto) return;
 
     try {
-      const ref = doc(db, "produtos", produto.id);
+      const user = auth.currentUser;
+      if (!user) throw new Error("Usuário não autenticado");
+      const ref = doc(db, "usuarios", user.uid, "produtos", produto.id);
       await updateDoc(ref, {
         nome: produto.nome,
         preco: parseFloat(produto.preco),
@@ -51,16 +54,13 @@ export default function EditProduct() {
     setLoading(false);
   };
 
-  if (!produto)
-    return <p className="mensagem">Carregando...</p>;
+  if (!produto) return <p className="mensagem">Carregando...</p>;
 
   return (
     <div className="product-form">
       <h2>Atualizar Produto</h2>
 
-      {mensagem && (
-        <p className="mensagem">{mensagem}</p>
-      )}
+      {mensagem && <p className="mensagem">{mensagem}</p>}
 
       <form onSubmit={handleUpdate}>
         <input
@@ -90,17 +90,12 @@ export default function EditProduct() {
         <input
           type="number"
           value={produto.estoque}
-          onChange={(e) =>
-            setProduto({ ...produto, estoque: e.target.value })
-          }
+          onChange={(e) => setProduto({ ...produto, estoque: e.target.value })}
           placeholder="Estoque"
           required
         />
 
-        <button
-          type="submit"
-          disabled={loading}
-        >
+        <button type="submit" disabled={loading}>
           {loading ? "Atualizando..." : "Atualizar Produto"}
         </button>
       </form>
