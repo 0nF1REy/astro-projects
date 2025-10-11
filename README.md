@@ -80,6 +80,8 @@ src/
 - **CSS Moderno:** Uso de Tailwind para desenvolvimento ágil
 - **Arquitetura Limpa:** Separação clara entre dados, lógica e apresentação
 
+---
+
 ### 🎭 ATARASHII GAKKO! Landing Page
 
 **📁 Pasta:** `atarashii-gakko/`  
@@ -107,7 +109,7 @@ src/
 
 ```
 src/
-├── components/           # Componentes reutilizáveis
+├── components/           # Componentes reutilzáveis
 │   ├── discography/     # Seção de discografia
 │   ├── hero/           # Banner principal
 │   ├── newsletter/     # Formulário de newsletter
@@ -125,6 +127,89 @@ src/
 - **Paleta de Cores:** Baseada na identidade visual do grupo
 - **Componentes Modulares:** Arquitetura componentizada para fácil manutenção
 - **Animações Sutis:** Interações visuais aprimoradas
+
+---
+
+### 🛒 Product Management
+
+**📁 Pasta:** `product-management/`  
+**🎯 Descrição:** Sistema completo para cadastro, edição e listagem de produtos, com autenticação de usuários e integração ao Firebase. O projeto utiliza Astro com React, SCSS modular, tipagem TypeScript e layout centralizado, focando em boas práticas de UX e arquitetura escalável.
+
+![Banner - Product Management](/readme_images/product-management.png)
+
+#### ✨ Funcionalidades
+
+- **🔐 Autenticação:** Login e registro de usuários com Firebase Auth
+- **📦 Cadastro de Produtos:** Adição, edição e remoção de produtos
+- **📋 Listagem Dinâmica:** Visualização dos produtos cadastrados
+- **🎨 SCSS Modular:** Estilos organizados por componente e variáveis globais
+- **⚛️ Componentes React:** Formulários e listas interativos com tipagem forte
+- **🗄️ Integração com Firebase:** Persistência dos dados dos produtos e usuários
+- **🖌️ Identidade Visual:** Logotipo próprio e fontes customizadas
+
+#### 🛠️ Tecnologias Utilizadas
+
+- **Framework:** Astro 5.14.1
+- **UI Library:** React 19.1.1
+- **Estilização:** SCSS/Sass modular
+- **Autenticação & Banco:** Firebase
+- **Tipagem:** TypeScript
+- **Deploy:** Vercel (configurado)
+
+#### 📂 Estrutura do Projeto
+
+```
+src/
+├── assets/            # Imagens e SVGs
+├── components/        # Componentes React e Astro
+│   ├── AddProduct.tsx # Formulário de cadastro
+│   ├── EditProduct.tsx # Edição de produto
+│   ├── Login.tsx      # Autenticação
+│   ├── Register.tsx   # Registro de usuário
+│   ├── Products.tsx   # Listagem de produtos
+│   ├── Home.astro     # Página inicial
+│   └── Welcome.astro  # Tela de boas-vindas
+├── layouts/           # Layout base
+│   └── BaseLayout.astro
+├── lib/               # Integração com Firebase
+│   └── firebase.ts
+├── pages/             # Páginas da aplicação
+│   ├── index.astro    # Home
+│   ├── login.astro    # Login
+│   ├── register.astro # Registro
+│   ├── products.astro # Produtos
+│   ├── addproduct.astro # Adicionar produto
+│   ├── editproduct.astro # Editar produto
+│   └── _template.astro   # Template global
+└── styles/            # SCSS global e modular
+    ├── global.scss
+    ├── variables.scss
+    └── components/
+        ├── _auth-form.scss
+        ├── _home.scss
+        ├── _logo.scss
+        ├── _product-form.scss
+        ├── _products.scss
+        └── _index.scss
+```
+
+#### 🧩 Recursos Demonstrados
+
+- **Autenticação com Firebase:** Fluxo completo de login e registro
+- **CRUD de Produtos:** Adicionar, editar, remover e listar produtos
+- **Layout Centralizado:** Template global para todas as páginas
+- **SCSS com Variáveis:** Design tokens centralizados para cores, fontes e espaçamentos
+- **Componentização:** Separação clara entre lógica, apresentação e dados
+- **Deploy Vercel:** Pronto para publicação com adapter configurado
+
+#### 🎨 Características Técnicas
+
+- **TypeScript First:** Tipagem forte em todo o projeto
+- **SCSS Modular:** Estilos organizados por componente
+- **Arquitetura Limpa:** Separação entre dados, lógica e apresentação
+- **Identidade Visual:** Logotipo próprio e fontes customizadas
+
+---
 
 ## 👤 Sobre o Desenvolvedor
 
