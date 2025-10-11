@@ -23,6 +23,11 @@ export default function RegisterForm() {
 
   return (
     <div className="auth-form">
+      <img
+        src="/assets/images/product-management-logotipo.png"
+        alt="Logo"
+        className="logo"
+      />
       <h2>Registrar-se</h2>
 
       <form onSubmit={handleSubmit}>
@@ -40,16 +45,13 @@ export default function RegisterForm() {
           onChange={(e) => setPassword(e.target.value)}
         />
 
-        <button type="submit">
-          Registrar-se
-        </button>
+        <button type="submit">Registrar-se</button>
       </form>
 
       {error && <p className="mensagem">{error}</p>}
 
       <div className="link">
-        Já tem uma conta?{' '}
-        <a href="/login">Entrar</a>
+        Já tem uma conta? <a href="/login">Entrar</a>
       </div>
     </div>
   );
