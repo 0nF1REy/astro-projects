@@ -1,15 +1,33 @@
 {
   "name": "astro-blog",
   "type": "module",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "description": "A simple Astro-powered blog featuring reusable components, Markdown posts, global styles, and React integration. Includes sample pages, layouts, and assets for rapid static site development.",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
+  "keywords": [
+    "astro"
+  ],
+  "author": {
+    "name": "Alan Ryan da Silva Domingues",
+    "email": "alanryan619@gmail.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/0nF1REy/astro-projects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0nF1REy/astro-projects.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0nF1REy/astro-projects/issues"
+  },
   "dependencies": {
     "@astrojs/react": "^4.4.0",
+    "@astrojs/vercel": "^8.2.9",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.1",
     "astro": "^5.14.4",
