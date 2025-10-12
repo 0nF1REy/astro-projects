@@ -1,0 +1,59 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import type { MarkdownInstance } from "astro";
+
+// Definição de uma interface para o frontmatter dos seus posts
+interface Frontmatter {
+  slug: string;
+  title: string;
+  author: string;
+  date: string;
+}
+
+// O tipo de retorno para cada objeto em getStaticPaths
+type Path = {
+  params: {
+    slug: string;
+  };
+  props: {
+    post: MarkdownInstance<Frontmatter>;
+  };
+};
+
+export async function getStaticPaths(): Promise<Path[]> {
+  const posts = await Astro.glob<Frontmatter>("../posts/*.md");
+
+  return posts.map(
+    (post): Path => ({
+      params: {
+        slug: post.frontmatter.slug,
+      },
+      props: {
+        post,
+      },
+    })
+  );
+}
+
+// Extração dos tipos de Astro.props
+const { post } = Astro.props as Path["props"];
+const { Content, frontmatter } = post;
+---
+
+<Layout title={frontmatter.title}>
+  <section class="page-content">
+    <div class="container">
+      <Card>
+        <a class="btn" href="/blog">Voltar</a>
+        <h2>{frontmatter.title}</h2>
+        <div>
+          Escrito por <strong>{frontmatter.author} </strong> em {
+            new Date(frontmatter.date).toLocaleDateString()
+          }
+        </div>
+        <Content />
+      </Card>
+    </div>
+  </section>
+</Layout>
