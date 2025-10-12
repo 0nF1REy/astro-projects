@@ -2,8 +2,23 @@
 import Layout from "../layouts/Layout.astro";
 import Showcase from "../components/Showcase.astro";
 import Card from "../components/Card.astro";
+import type { MarkdownInstance } from "astro";
 
-const posts = await Astro.glob("../posts/*.md");
+interface Frontmatter {
+  title: string;
+  author: string;
+  date: string;
+  excerpt: string;
+  slug: string;
+}
+
+const allPostImporters = await import.meta.glob<MarkdownInstance<Frontmatter>>(
+  "../posts/*.md"
+);
+const postPromises = Object.values(allPostImporters).map((importer) =>
+  importer()
+);
+const posts = await Promise.all(postPromises);
 ---
 
 <Layout title="Blog do Astro">

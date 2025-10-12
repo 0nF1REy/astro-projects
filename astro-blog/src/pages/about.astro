@@ -1,10 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
-import { Image } from "astro:assets";
-
-import logos from "/assets/images/deploy-logos.png";
-import logosSmall from "/assets/images/deploy-logos-small.png";
 ---
 
 <Layout title="Sobre o Astro">
@@ -34,26 +30,26 @@ import logosSmall from "/assets/images/deploy-logos-small.png";
           deserunt inventore ut voluptate, officia maiores repellat tenetur
           praesentium omnis est ex tempora a necessitatibus reiciendis at et
           dignissimos. Ipsam eius consequuntur cupiditate aperiam porro, esse
-          laborum impedit nesciunt ut voluptatum assumenda aspernatur libero
-          iusto error molestias dolorum, necessitatibus labore?
+          laborum impedit nesunt ut voluptatum assumenda aspernatur libero iusto
+          error molestias dolorum, necessitatibus labore?
         </p>
       </Card>
 
       <h3>Faça deploy em qualquer lugar — até na borda</h3>
 
-      <Image
+      <img
         class="logos"
-        src={logos}
+        src="/assets/images/deploy-logos.png"
         alt="Logotipos de serviços de implantação"
-        width={984}
-        height={156}
+        width="984"
+        height="156"
       />
-      <Image
+      <img
         class="logos-small"
-        src={logosSmall}
+        src="/assets/images/deploy-logos-small.png"
         alt="Logotipos de serviços de implantação"
-        width={600}
-        height={95}
+        width="600"
+        height="95"
       />
 
       <p>

@@ -1,6 +1,6 @@
 # Astro Blog
 
-<img src="/readme_images/astro-blog.png">
+![Banner - Astro Blog](/readme_images/astro-blog.png)
 
 ## Uso
 
@@ -14,7 +14,3 @@ Todos os comandos são executados a partir da raiz do projeto, em um terminal:
 | `npm run preview`      | Visualiza sua build localmente, antes de publicar              |
 | `npm run astro ...`    | Executa comandos CLI como `astro add`, `astro preview`         |
 | `npm run astro --help` | Obtém ajuda para usar o CLI do Astro                           |
-
-## Tema HTML & CSS
-
-Todos os arquivos `.html`, `style.css` e imagens estão na pasta `astro-website-theme`.

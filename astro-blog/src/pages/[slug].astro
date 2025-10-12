@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import type { MarkdownInstance } from "astro";
 
-// Definição de uma interface para o frontmatter dos seus posts
 interface Frontmatter {
   slug: string;
   title: string;
@@ -11,33 +10,26 @@ interface Frontmatter {
   date: string;
 }
 
-// O tipo de retorno para cada objeto em getStaticPaths
-type Path = {
-  params: {
-    slug: string;
-  };
-  props: {
-    post: MarkdownInstance<Frontmatter>;
-  };
-};
-
-export async function getStaticPaths(): Promise<Path[]> {
-  const posts = await Astro.glob<Frontmatter>("../posts/*.md");
-
-  return posts.map(
-    (post): Path => ({
-      params: {
-        slug: post.frontmatter.slug,
-      },
-      props: {
-        post,
-      },
-    })
+export async function getStaticPaths() {
+  const allPosts = await import.meta.glob<MarkdownInstance<Frontmatter>>(
+    "../posts/*.md"
   );
+
+  const postPromises = Object.values(allPosts).map((importer) => importer());
+
+  const resolvedPosts = await Promise.all(postPromises);
+
+  return resolvedPosts.map((post) => ({
+    params: {
+      slug: post.frontmatter.slug,
+    },
+    props: {
+      post,
+    },
+  }));
 }
 
-// Extração dos tipos de Astro.props
-const { post } = Astro.props as Path["props"];
+const { post } = Astro.props;
 const { Content, frontmatter } = post;
 ---
 
