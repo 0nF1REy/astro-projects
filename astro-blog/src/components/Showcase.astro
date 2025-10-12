@@ -1,8 +1,4 @@
 ---
-import { Image } from "astro:assets";
-import logos from "/assets/images/framework-logos.png";
-import logosSmall from "/assets/images/framework-logos-small.png";
-
 export interface Props {
   heading?: string;
   text?: string;
@@ -28,19 +24,19 @@ const {
     showExtra && (
       <>
         <div class="showcase-img">
-          <Image
+          <img
             class="logos"
-            src={logos}
+            src="/assets/images/framework-logos.png"
             alt="Logotipos de frameworks"
-            width={984}
-            height={156}
+            width="984"
+            height="156"
           />
-          <Image
+          <img
             class="logos-small"
-            src={logosSmall}
+            src="/assets/images/framework-logos-small.png"
             alt="Logotipos de frameworks"
-            width={600}
-            height={95}
+            width="600"
+            height="95"
           />
         </div>
 
