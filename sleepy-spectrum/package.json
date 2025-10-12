@@ -9,6 +9,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^9.4.6",
     "@clerk/astro": "^2.13.6",
     "astro": "^5.14.4"
   }
