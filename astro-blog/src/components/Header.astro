@@ -1,12 +1,13 @@
 ---
-
+import { Image } from "astro:assets";
+import logo from "../assets/images/logo.svg";
 ---
 
 <header class="header">
   <div class="container">
     <div class="logo">
       <a href="/">
-        <img src="/favicon.svg" alt="Logotipo" width="140" height="35" />
+        <Image src={logo} alt="Logotipo do Astro" width="140" height="35" />
       </a>
     </div>
     <nav>
