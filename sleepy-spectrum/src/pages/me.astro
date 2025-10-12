@@ -1,0 +1,11 @@
+---
+const { isAuthenticated, userId } = Astro.locals.auth();
+
+if (!isAuthenticated) {
+  return Astro.redirect("/");
+}
+
+const user = await Astro.locals.currentUser();
+---
+
+<div>Welcome, {user?.firstName}!</div>
