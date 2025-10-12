@@ -1,6 +1,7 @@
 ---
-import logos from "../images/framework-logos.png";
-import logosSmall from "../images/framework-logos-small.png";
+import { Image } from "astro:assets";
+import logos from "/assets/images/framework-logos.png";
+import logosSmall from "/assets/images/framework-logos-small.png";
 
 export interface Props {
   heading?: string;
@@ -9,8 +10,8 @@ export interface Props {
 }
 
 const {
-  heading = "Welcome To The Astro Crash Course!",
-  text = "Build super fast HTML-first websites using your favorite JavaScript frameworks",
+  heading = "Bem-vindo a demonstração Astro!",
+  text = "Construa sites super rápidos com HTML primeiro usando seus frameworks JavaScript favoritos",
   showExtra = false,
 } = Astro.props as Props;
 ---
@@ -27,14 +28,24 @@ const {
     showExtra && (
       <>
         <div class="showcase-img">
-          <img class="logos" src={logos} alt="" />
-          <img class="logos-small" src={logosSmall} alt="" />
+          <Image
+            class="logos"
+            src={logos}
+            alt="Logotipos de frameworks"
+            width={984}
+            height={156}
+          />
+          <Image
+            class="logos-small"
+            src={logosSmall}
+            alt="Logotipos de frameworks"
+            width={600}
+            height={95}
+          />
         </div>
 
         <p class="showcase-demo">
-          <small>
-            This is a demo website used for the YouTube crash course
-          </small>
+          <small>Este é um site de demonstração</small>
         </p>
       </>
     )
