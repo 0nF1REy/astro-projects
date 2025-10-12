@@ -1,0 +1,47 @@
+---
+import Card from "./Card.astro";
+
+const featuresData = [
+  {
+    title: "Zero JavaScript em Tempo de Execução",
+    body: "O Astro renderiza HTML no servidor e remove qualquer JavaScript restante não utilizado.",
+  },
+  {
+    title: "O Poder das Ilhas",
+    body: "Precisa de uma interface interativa? Carregue componentes individuais e não bloqueantes em paralelo.",
+  },
+  {
+    title: "Ilhas com Lazy-Loading",
+    body: "Os componentes só são ativados quando entram na tela. Se você não vê, o Astro não os carrega.",
+  },
+];
+---
+
+<section class="features">
+  <div class="container">
+    {
+      featuresData.map((feature) => (
+        <Card>
+          <h3>{feature.title}</h3>
+          <p>{feature.body}</p>
+        </Card>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .features .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 0 20px;
+    margin: 30px auto;
+  }
+
+  @media (max-width: 500px) {
+    .features .container {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

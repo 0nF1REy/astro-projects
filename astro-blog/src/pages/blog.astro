@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Showcase from "../components/Showcase.astro";
+import Card from "../components/Card.astro";
+import type { MarkdownInstance } from "astro";
+
+interface Frontmatter {
+  title: string;
+  author: string;
+  date: string;
+  excerpt: string;
+  slug: string;
+}
+
+const allPostImporters = await import.meta.glob<MarkdownInstance<Frontmatter>>(
+  "../posts/*.md"
+);
+const postPromises = Object.values(allPostImporters).map((importer) =>
+  importer()
+);
+const posts = await Promise.all(postPromises);
+---
+
+<Layout title="Blog do Astro">
+  <Showcase
+    heading="Blog do Astro"
+    text="Um blog simples construído com Astro"
+  />
+  <section class="page-content">
+    <div class="container">
+      {
+        posts.map((post) => (
+          <Card>
+            <h3>{post.frontmatter.title}</h3>
+            <div>
+              Escrito por <strong>{post.frontmatter.author}</strong> em{" "}
+              {new Date(post.frontmatter.date).toLocaleDateString()}
+            </div>
+            <p>{post.frontmatter.excerpt}</p>
+            <a class="btn" href={`/${post.frontmatter.slug}`}>
+              Leia Mais
+            </a>
+          </Card>
+        ))
+      }
+    </div>
+  </section>
+</Layout>
