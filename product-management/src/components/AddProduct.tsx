@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { db } from "../lib/firebase";
+import { auth, db } from "../lib/firebase";
 import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 export default function AddProduct() {
@@ -15,7 +15,9 @@ export default function AddProduct() {
     setLoading(true);
 
     try {
-      await addDoc(collection(db, "produtos"), {
+      const user = auth.currentUser;
+      if (!user) throw new Error("Usuário não autenticado");
+      await addDoc(collection(db, "usuarios", user.uid, "produtos"), {
         nome,
         preco: parseFloat(preco),
         descricao,
@@ -41,9 +43,7 @@ export default function AddProduct() {
     <div className="product-form">
       <h2>Criar Produto</h2>
 
-      {mensagem && (
-        <div className="mensagem">{mensagem}</div>
-      )}
+      {mensagem && <div className="mensagem">{mensagem}</div>}
 
       <form onSubmit={handleSubmit}>
         <input
@@ -76,10 +76,7 @@ export default function AddProduct() {
           required
         />
 
-        <button
-          type="submit"
-          disabled={loading}
-        >
+        <button type="submit" disabled={loading}>
           {loading ? "Salvando..." : "Salvar Produto"}
         </button>
       </form>

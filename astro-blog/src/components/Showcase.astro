@@ -1,0 +1,103 @@
+---
+import { Image } from "astro:assets";
+import logos from "../assets/images/framework-logos.png";
+import logosSmall from "../assets/images/deploy-logos-small.png";
+
+export interface Props {
+  heading?: string;
+  text?: string;
+  showExtra?: boolean;
+}
+
+const {
+  heading = "Bem-vindo a demonstração Astro!",
+  text = "Construa sites super rápidos com HTML primeiro usando seus frameworks JavaScript favoritos",
+  showExtra = false,
+} = Astro.props as Props;
+---
+
+<section class="showcase">
+  <div class="showcase-text">
+    <h1>{heading}</h1>
+    <p>
+      {text}
+    </p>
+  </div>
+
+  {
+    showExtra && (
+      <>
+        <div class="showcase-img">
+          <Image
+            class="logos"
+            src={logos}
+            alt="Logotipos de frameworks"
+            width={984}
+            height={156}
+          />
+          <Image
+            class="logos-small"
+            src={logosSmall}
+            alt="Logotipos de frameworks"
+            width={600}
+            height={95}
+          />
+        </div>
+
+        <p class="showcase-demo">
+          <small>Este é um site de demonstração</small>
+        </p>
+      </>
+    )
+  }
+</section>
+
+<style>
+  .showcase {
+    height: auto;
+    background-color: var(--color-secondary);
+    background-image: linear-gradient(
+      to bottom,
+      var(--color-primary),
+      rgb(15 23 42 / 0)
+    );
+    padding: 30px;
+  }
+
+  .showcase-blog {
+    min-height: 300px;
+  }
+
+  .showcase-text {
+    max-width: 500px;
+    color: #fff;
+    text-align: center;
+    margin: 50px auto;
+  }
+
+  .showcase h1 {
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .showcase p {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .showcase-img {
+    text-align: center;
+  }
+
+  .showcase-img img {
+    border-radius: 10px;
+    margin: auto;
+  }
+
+  .showcase-demo {
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
+  }
+</style>

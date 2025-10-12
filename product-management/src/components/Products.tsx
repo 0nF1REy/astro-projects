@@ -37,7 +37,10 @@ export default function Products() {
     const fetchProdutos = async () => {
       setLoading(true);
       try {
-        const querySnapshot = await getDocs(collection(db, "produtos"));
+        if (!user) return;
+        const querySnapshot = await getDocs(
+          collection(db, "usuarios", user.uid, "produtos")
+        );
         const prods: Produto[] = [];
         querySnapshot.forEach((doc) => {
           const data = doc.data();
@@ -55,8 +58,8 @@ export default function Products() {
       }
       setLoading(false);
     };
-    fetchProdutos();
-  }, []);
+    if (user) fetchProdutos();
+  }, [user]);
 
   // Logout
   const handleLogout = async () => {
@@ -73,10 +76,10 @@ export default function Products() {
     const confirmar = window.confirm(
       "Tem certeza de que deseja excluir este produto?"
     );
-    if (!confirmar) return;
+    if (!confirmar || !user) return;
 
     try {
-      await deleteDoc(doc(db, "produtos", id));
+      await deleteDoc(doc(db, "usuarios", user.uid, "produtos", id));
       setProdutos(produtos.filter((p) => p.id !== id));
     } catch (err) {
       console.error("Erro ao excluir produto:", err);
@@ -90,7 +93,12 @@ export default function Products() {
         <button onClick={handleLogout}>Sair</button>
       </div>
       <h1 className="products-title">Produtos</h1>
-      <button className="products-add-btn" onClick={() => (window.location.href = "/addproduct")}>Adicionar Produto</button>
+      <button
+        className="products-add-btn"
+        onClick={() => (window.location.href = "/addproduct")}
+      >
+        Adicionar Produto
+      </button>
       {loading ? (
         <p>Carregando produtos...</p>
       ) : produtos.length === 0 ? (
@@ -115,7 +123,10 @@ export default function Products() {
                   {produto.preco ? `R$${produto.preco}` : ""}
                 </span>
               </div>
-              <button className="delete-btn" onClick={() => handleDelete(produto.id)}>
+              <button
+                className="delete-btn"
+                onClick={() => handleDelete(produto.id)}
+              >
                 <FontAwesomeIcon icon={faTrash} />
               </button>
             </li>
