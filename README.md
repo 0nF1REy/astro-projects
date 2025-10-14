@@ -45,22 +45,12 @@ Atualmente, há um projeto de landing page que inclui componentes interativos e 
 
 ```
 src/
-├── components/          # Componentes reutilizáveis
-│   ├── Card.tsx        # Componente React interativo
-│   └── Link.astro      # Componente Astro para navegação
-├── data/               # Dados estáticos
-│   └── sample.json     # Dados de exemplo
-├── layouts/            # Layouts base
-│   └── BaseLayout.astro # Layout principal com navegação
-├── lib/                # Utilitários e funções auxiliares
-│   └── utils.ts        # Funções TypeScript
-├── pages/              # Páginas da aplicação
-│   ├── index.astro     # Página inicial
-│   ├── about.astro     # Página sobre
-│   ├── hello.astro     # Página de demonstração
-│   └── info.md         # Página em Markdown
-└── styles/             # Estilos globais
-    └── global.css      # CSS global
+├── components/
+├── data/
+├── layouts/
+├── lib/
+├── pages/
+└── styles/
 ```
 
 #### 🔬 Recursos Demonstrados
@@ -109,16 +99,16 @@ src/
 
 ```
 src/
-├── components/           # Componentes reutilzáveis
-│   ├── discography/     # Seção de discografia
-│   ├── hero/           # Banner principal
-│   ├── newsletter/     # Formulário de newsletter
-│   ├── tour/          # Datas de turnê
-│   └── social-nav/    # Navegação social
-├── layouts/           # Layouts base
-├── pages/            # Páginas da aplicação
-├── scripts/          # Scripts JavaScript
-└── styles/           # Estilos SCSS organizados
+├── components/
+│   ├── discography/
+│   ├── hero/
+│   ├── newsletter/
+│   ├── tour/
+│   └── social-nav/
+├── layouts/
+├── pages/
+├── scripts/
+└── styles/
 ```
 
 #### 🎨 Recursos de Design
@@ -160,37 +150,13 @@ src/
 
 ```
 src/
-├── assets/            # Imagens e SVGs
-├── components/        # Componentes React e Astro
-│   ├── AddProduct.tsx # Formulário de cadastro
-│   ├── EditProduct.tsx # Edição de produto
-│   ├── Login.tsx      # Autenticação
-│   ├── Register.tsx   # Registro de usuário
-│   ├── Products.tsx   # Listagem de produtos
-│   ├── Home.astro     # Página inicial
-│   └── Welcome.astro  # Tela de boas-vindas
-├── layouts/           # Layout base
-│   └── BaseLayout.astro
-├── lib/               # Integração com Firebase
-│   └── firebase.ts
-├── pages/             # Páginas da aplicação
-│   ├── index.astro    # Home
-│   ├── login.astro    # Login
-│   ├── register.astro # Registro
-│   ├── products.astro # Produtos
-│   ├── addproduct.astro # Adicionar produto
-│   ├── editproduct.astro # Editar produto
-│   └── _template.astro   # Template global
-└── styles/            # SCSS global e modular
-    ├── global.scss
-    ├── variables.scss
+├── assets/
+├── components/
+├── layouts/
+├── lib/
+├── pages/
+└── styles/
     └── components/
-        ├── _auth-form.scss
-        ├── _home.scss
-        ├── _logo.scss
-        ├── _product-form.scss
-        ├── _products.scss
-        └── _index.scss
 ```
 
 #### 🧩 Recursos Demonstrados
