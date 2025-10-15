@@ -5,33 +5,27 @@ import MainLayout from "../../../layouts/MainLayout.astro";
 import ArticleCard from "../../../components/ArticleCard.astro";
 import { capitalize } from "../../../utils";
 
-// 1. Esta função é executada no momento da compilação para gerar as rotas
+// Geração de rotas estáticas para cada tag
 export async function getStaticPaths() {
   const allBlogArticles = await getCollection("blog");
 
-  // Coleta todas as tags de todos os artigos
   const allTags = allBlogArticles.map((article) => article.data.tags).flat();
-
-  // Remove as duplicadas para ter uma lista de tags únicas
   const uniqueTags = [...new Set(allTags)];
-
-  // Gera um objeto de rota para cada tag única
   return uniqueTags.map((tag) => {
-    // Filtra os artigos que contêm esta tag específica
     const filteredArticles = allBlogArticles.filter((article) =>
       article.data.tags.includes(tag)
     );
 
     return {
-      params: { tag }, // Define o parâmetro da URL (ex: /articles/tag/javascript)
-      props: { articles: filteredArticles }, // Passa os artigos filtrados como props para a página
+      params: { tag },
+      props: { articles: filteredArticles },
     };
   });
 }
 
-// 2. O restante do código é executado para cada página gerada
+// Props da página
 const { tag } = Astro.params;
-const { articles } = Astro.props;
+const { articles } = Astro.props as { articles: CollectionEntry<"blog">[] };
 ---
 
 <MainLayout title={`Artigos com a tag #${capitalize(tag)}`}>

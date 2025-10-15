@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import logo from '../images/logo.png';
+import logo from "../images/logo.png";
 ---
 
 <nav class="bg-gray-900 text-white">
@@ -8,10 +8,15 @@ import logo from '../images/logo.png';
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
   >
     <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-      <Image src={logo} class="h-14" alt="TechPeople Logo" width={55} height={55} />
-      <span
-        class="self-center text-2xl font-semibold whitespace-nowrap"
-        ><span class="text-indigo-400">Tech</span>People</span
+      <Image
+        src={logo}
+        class="h-14"
+        alt="Logo do Scriptora"
+        width={55}
+        height={55}
+      />
+      <span class="self-center text-2xl font-semibold whitespace-nowrap"
+        ><span class="text-indigo-400">Srip</span>tora</span
       >
     </a>
     <button
@@ -21,7 +26,7 @@ import logo from '../images/logo.png';
       aria-controls="navbar-default"
       aria-expanded="false"
     >
-      <span class="sr-only">Open main menu</span>
+      <span class="sr-only">Abrir menu principal</span>
       <svg
         class="w-5 h-5"
         aria-hidden="true"
@@ -34,8 +39,7 @@ import logo from '../images/logo.png';
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
-          d="M1 1h15M1 7h15M1 13h15"
-        />
+          d="M1 1h15M1 7h15M1 13h15"></path>
       </svg>
     </button>
     <div class="hidden w-full md:block md:w-auto" id="navbar-default">
@@ -46,22 +50,21 @@ import logo from '../images/logo.png';
           <a
             href="/"
             class="block py-2 px-3 text-white rounded md:p-0 hover:text-indigo-400"
-            aria-current="page"
-            >Home</a
+            aria-current="page">Início</a
           >
         </li>
         <li>
           <a
             href="/articles"
             class="block py-2 px-3 text-white rounded md:p-0 hover:text-indigo-400"
-            >All Articles</a
+            >Todos os Artigos</a
           >
         </li>
         <li>
           <a
             href="/about"
             class="block py-2 px-3 text-white rounded md:p-0 hover:text-indigo-400"
-            >About</a
+            >Sobre</a
           >
         </li>
       </ul>
