@@ -1,29 +1,20 @@
-# Astro Starter Kit: Minimal
+# Astro TechPeople Blog
+
+A tech blog built with Astro collections, Markdown & TypeScript. You can view the live demo [here](https://astro-blog-flame.vercel.app/)
+
+<img src="/readme_images/scriptora.png" />
+
+This project is from the Traversy Media members-only course - [Astro Quick Start](https://www.traversymedia.com/astro-quick-start)
+
+The HTML files are available in the `blog-theme` folder. There is no CSS as we use all Tailwind classes.
+
+## Usage
+
+Install dependencies
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install
 ```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
 
 ## 🧞 Commands
 
@@ -38,6 +29,21 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Creating Posts
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Create a new `.md` file in the `content/blog` folder. Add the frontmatter and content.
+
+Here is an example of frontmatter:
+
+```md
+---
+title: "The best laptops for developers in 2024"
+pubDate: 2024-01-20
+author: "John Doe"
+image: "image1.png"
+tags: ["tech", "hardware"]
+slug: the-best-laptops-for-developers-in-2024
+---
+```
+
+Upload the image to `/public/images` and you're good to go.
