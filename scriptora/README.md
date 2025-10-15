@@ -1,4 +1,4 @@
-# Astro TechPeople Blog
+# Scriptora
 
 A tech blog built with Astro collections, Markdown & TypeScript. You can view the live demo [here](https://astro-blog-flame.vercel.app/)
 
@@ -37,11 +37,11 @@ Here is an example of frontmatter:
 
 ```md
 ---
-title: "The best laptops for developers in 2024"
+title: "Os melhores laptops para desenvolvedores em 2024"
 pubDate: 2024-01-20
 author: "John Doe"
 image: "image1.png"
-tags: ["tech", "hardware"]
+tags: ["tecnologia", "hardware"]
 slug: the-best-laptops-for-developers-in-2024
 ---
 ```
