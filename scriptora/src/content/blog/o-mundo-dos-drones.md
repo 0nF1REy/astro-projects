@@ -4,7 +4,7 @@ pubDate: 2024-01-16
 author: "Sarah Davis"
 image: "image5.png"
 tags: ["drones", "tecnologia", "gadgets"]
-slug: soaring-to-new-heights-the-world-of-drones
+slug: o-mundo-dos-drones
 ---
 
 Os drones transcenderam suas origens como brinquedos de controle remoto e evoluíram para uma tecnologia poderosa com diversas aplicações. Em 2024, o mundo dos drones está decolando de várias maneiras. Vamos explorar os avanços e as oportunidades crescentes no reino dos drones.

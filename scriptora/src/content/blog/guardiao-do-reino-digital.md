@@ -4,7 +4,7 @@ pubDate: 2024-01-19
 author: "John Doe"
 image: "image2.png"
 tags: ["código", "segurança", "tecnologia"]
-slug: guardian-of-the-digital-realm-web-security
+slug: guardiao-do-reino-digital
 ---
 
 No mundo interconectado de hoje, onde vazamentos de dados e ameaças cibernéticas estão em ascensão, a segurança na web tornou-se primordial. Como guardiões do reino digital, é nossa responsabilidade proteger informações sensíveis, manter a confiança do usuário e garantir a integridade dos sistemas online. Vamos mergulhar no mundo da segurança na web e explorar os princípios fundamentais que todo desenvolvedor deve adotar.
