@@ -1,6 +1,6 @@
 ---
 title: "Alçando Novos Voos: O Mundo dos Drones"
-pubDate: 2024-01-16
+pubDate: 2025-09-03
 author: "Sarah Davis"
 image: "image5.png"
 tags: ["drones", "tecnologia", "gadgets"]

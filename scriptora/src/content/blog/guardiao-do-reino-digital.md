@@ -1,6 +1,6 @@
 ---
 title: "Guardião do Reino Digital: Segurança na Web"
-pubDate: 2024-01-19
+pubDate: 2025-11-04
 author: "John Doe"
 image: "image2.png"
 tags: ["código", "segurança", "tecnologia"]

@@ -1,6 +1,6 @@
 ---
 title: "Capturando os Momentos da Vida com a Excelência da Canon"
-pubDate: 2024-01-15
+pubDate: 2025-07-28
 author: "David Mitchell"
 image: "image6.png"
 tags: ["fotografia", "canon", "tecnologia"]

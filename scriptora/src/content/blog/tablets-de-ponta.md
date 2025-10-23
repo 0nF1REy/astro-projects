@@ -1,6 +1,6 @@
 ---
 title: "Liberte a Criatividade com Estes Tablets de Ponta"
-pubDate: 2024-01-14
+pubDate: 2025-12-19
 author: "Ralph Johnson"
 image: "image7.png"
 tags: ["tablets", "gadgets"]
