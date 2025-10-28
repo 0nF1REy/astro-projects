@@ -3,6 +3,8 @@ import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../constants";
 
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
 const { title = "Artigos, Histórias e Tutoriais para Pessoas de Tecnologia" } =
   Astro.props;
 
@@ -22,6 +24,7 @@ interface Props {
       integrity="sha512-BJ/5sR2hFxQTKin/55JQCcMTObShDBAmVjL/3NR/MVcrhyOazJjAgvROem03+HYyGw16SVdSfoWCFGr9syxAKA=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"></script>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{SITE_TITLE} - {title}</title>
   </head>
   <body class="">

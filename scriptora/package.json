@@ -1,7 +1,7 @@
 {
   "name": "scriptora",
   "type": "module",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -11,6 +11,10 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/vercel": "^8.2.10",
+    "@fortawesome/fontawesome-free": "^7.1.0",
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-brands-svg-icons": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
     "astro": "^5.14.4"
   },
   "devDependencies": {

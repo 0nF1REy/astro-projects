@@ -6,7 +6,7 @@ import MostRecentArticle from "../components/MostRecentArticle.astro";
 import { HOMEPAGE_ARTICLE_LIMIT } from "../constants";
 
 import { getCollection } from "astro:content";
-import type { CollectionEntry, CollectionKey } from "astro:content";
+import type { CollectionEntry } from "astro:content";
 
 const allBlogArticles: CollectionEntry<"blog">[] = (
   await getCollection("blog")

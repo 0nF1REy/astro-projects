@@ -3,25 +3,28 @@ import MainLayout from "../layouts/MainLayout.astro";
 import { Image } from "astro:assets";
 
 import about from "../images/about.jpg";
-import team1 from "../images/team1.png";
-import team2 from "../images/team2.png";
-import team3 from "../images/team3.png";
+import alanRyan from "../images/team/alan-ryan.jpg";
+import johnDoe from "../images/team/john-doe.png";
+import paulNewman from "../images/team/paul-newman.png";
+import isabelaMartins from "../images/team/isabela-martins.png";
+import sofiaRossi from "../images/team/sofia-rossi.jpg";
+import emilyChen from "../images/team/emily-chen.jpg";
 ---
 
 <MainLayout title="Sobre o Blog Scriptora">
-  <h1 class="text-4xl font-bold mb-5">Sobre o Scriptora</h1>
+  <h1 class="text-4xl font-bold mb-5">Sobre a Scriptora</h1>
   <div class="flex flex-col md:flex-row items-center justify-between gap-6">
     <div class="w-full md:w-1/2 mb-8 md:mb-0">
       <Image
         src={about}
-        alt="Scriptora Team"
+        alt="Equipe da Scriptora trabalhando"
         class="w-full h-auto rounded-lg shadow-lg"
       />
     </div>
     <div class="w-full md:w-1/2">
       <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Quem Somos</h2>
       <p class="text-gray-700 leading-relaxed mb-6">
-        Somos o Scriptora, uma equipe apaixonada por tecnologia dedicada a
+        Somos a Scriptora, uma equipe apaixonada por tecnologia dedicada a
         trazer as últimas notícias, artigos e tutoriais sobre tudo que envolve o
         universo tech.
       </p>
@@ -35,31 +38,82 @@ import team3 from "../images/team3.png";
     </div>
   </div>
 
-  <!-- Equipe -->
   <div class="mt-10">
     <h2 class="text-3xl font-extrabold text-gray-900 mb-8">Nossa Equipe</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <Image src={team1} alt="Team Member 1" class="w-full h-auto" />
+        <Image
+          src={alanRyan}
+          alt="Foto de Alan Ryan"
+          class="w-full h-64 object-cover object-center"
+        />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Alan Ryan</h3>
+          <p class="text-gray-700">
+            Arquiteto de Soluções & Estrategista Digital
+          </p>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <Image
+          src={johnDoe}
+          alt="Foto de John Doe"
+          class="w-full h-64 object-cover object-center"
+        />
         <div class="p-6">
           <h3 class="text-xl font-semibold text-gray-900 mb-2">John Doe</h3>
-          <p class="text-gray-70">Fundador & Editor-chefe</p>
+          <p class="text-gray-700">Fundador & Editor-chefe</p>
         </div>
       </div>
+
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <Image src={team2} alt="Team Member 2" class="w-full h-auto" />
+        <Image
+          src={paulNewman}
+          alt="Foto de Paul Newman"
+          class="w-full h-64 object-cover object-center"
+        />
         <div class="p-6">
           <h3 class="text-xl font-semibold text-gray-900 mb-2">Paul Newman</h3>
-          <p class="text-gray-70">Redator Principal</p>
+          <p class="text-gray-700">Redator Principal</p>
         </div>
       </div>
+
       <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <Image src={team3} alt="Team Member 3" class="w-full h-auto" />
+        <Image
+          src={isabelaMartins}
+          alt="Foto de Johanna Johnson"
+          class="w-full h-64 object-cover object-center"
+        />
         <div class="p-6">
           <h3 class="text-xl font-semibold text-gray-900 mb-2">
-            Johanna Johnson
+            Isabela Martins
           </h3>
-          <p class="text-gray-70">Analista de Tecnologia</p>
+          <p class="text-gray-700">Analista de Tecnologia</p>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <Image
+          src={sofiaRossi}
+          alt="Foto de Sofia Rossi"
+          class="w-full h-64 object-cover object-center"
+        />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Sofia Rossi</h3>
+          <p class="text-gray-700">Gerente de Comunidade & Mídias Sociais</p>
+        </div>
+      </div>
+
+      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+        <Image
+          src={emilyChen}
+          alt="Foto de Lucas Mendes"
+          class="w-full h-64 object-cover object-center"
+        />
+        <div class="p-6">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Emily Chen</h3>
+          <p class="text-gray-700">Especialista em UX/UI</p>
         </div>
       </div>
     </div>
