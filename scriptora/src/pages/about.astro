@@ -9,113 +9,185 @@ import paulNewman from "../images/team/paul-newman.png";
 import isabelaMartins from "../images/team/isabela-martins.png";
 import sofiaRossi from "../images/team/sofia-rossi.jpg";
 import emilyChen from "../images/team/emily-chen.jpg";
+
+const team = [
+  {
+    name: "Alan Ryan",
+    role: "Arquiteto de Soluções & Estrategista Digital",
+    image: alanRyan,
+    social: {
+      twitter: "#",
+      linkedin: "#",
+      github: "#",
+    },
+  },
+  {
+    name: "John Doe",
+    role: "Fundador & Editor-chefe",
+    image: johnDoe,
+    social: {
+      twitter: "#",
+      linkedin: "#",
+    },
+  },
+  {
+    name: "Paul Newman",
+    role: "Redator Principal",
+    image: paulNewman,
+    social: {
+      twitter: "#",
+      linkedin: "#",
+    },
+  },
+  {
+    name: "Isabela Martins",
+    role: "Analista de Tecnologia",
+    image: isabelaMartins,
+    social: {
+      twitter: "#",
+      linkedin: "#",
+      github: "#",
+    },
+  },
+  {
+    name: "Sofia Rossi",
+    role: "Gerente de Comunidade & Mídias Sociais",
+    image: sofiaRossi,
+    social: {
+      twitter: "#",
+      linkedin: "#",
+      instagram: "#",
+    },
+  },
+  {
+    name: "Emily Chen",
+    role: "Especialista em UX/UI",
+    image: emilyChen,
+    social: {
+      twitter: "#",
+      linkedin: "#",
+      github: "#",
+    },
+  },
+];
 ---
 
 <MainLayout title="Sobre o Blog Scriptora">
-  <h1 class="text-4xl font-bold mb-5">Sobre a Scriptora</h1>
-  <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-    <div class="w-full md:w-1/2 mb-8 md:mb-0">
-      <Image
-        src={about}
-        alt="Equipe da Scriptora trabalhando"
-        class="w-full h-auto rounded-lg shadow-lg"
-      />
-    </div>
-    <div class="w-full md:w-1/2">
-      <h2 class="text-3xl font-extrabold text-gray-900 mb-4">Quem Somos</h2>
-      <p class="text-gray-700 leading-relaxed mb-6">
-        Somos a Scriptora, uma equipe apaixonada por tecnologia dedicada a
-        trazer as últimas notícias, artigos e tutoriais sobre tudo que envolve o
-        universo tech.
-      </p>
-      <p class="text-gray-700 leading-relaxed mb-6">
-        Nossa missão é empoderar e educar nossos leitores, ajudando-os a se
-        manterem atualizados com o mundo da tecnologia em constante evolução.
-        Seja você um desenvolvedor experiente, um entusiasta de gadgets ou
-        apenas curioso sobre as últimas tendências, aqui você encontra conteúdo
-        relevante.
-      </p>
-    </div>
-  </div>
+  <section class="py-16 bg-white">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h1 class="text-5xl font-extrabold text-gray-900 mb-4">
+          Sobre a Scriptora
+        </h1>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Apaixonados por tecnologia, dedicados a trazer o futuro para você,
+          hoje.
+        </p>
+      </div>
 
-  <div class="mt-10">
-    <h2 class="text-3xl font-extrabold text-gray-900 mb-8">Nossa Equipe</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <Image
-          src={alanRyan}
-          alt="Foto de Alan Ryan"
-          class="w-full h-64 object-cover object-center"
-        />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Alan Ryan</h3>
-          <p class="text-gray-700">
-            Arquiteto de Soluções & Estrategista Digital
+      <div
+        class="flex flex-col md:flex-row items-center justify-between gap-12"
+      >
+        <div class="w-full md:w-1/2">
+          <Image
+            src={about}
+            alt="Equipe da Scriptora trabalhando"
+            class="w-full h-auto rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+        <div class="w-full md:w-1/2">
+          <h2 class="text-4xl font-bold text-gray-900 mb-6">Quem Somos</h2>
+          <p class="text-gray-700 leading-relaxed mb-6">
+            Somos a Scriptora, uma equipe de entusiastas da tecnologia
+            comprometida em fornecer as notícias, artigos e tutoriais mais
+            recentes sobre tudo o que envolve o universo da tecnologia.
+          </p>
+          <p class="text-gray-700 leading-relaxed">
+            Nossa missão é capacitar e educar nossos leitores, ajudando-os a se
+            manterem atualizados em um mundo tecnológico em constante evolução.
+            Seja você um desenvolvedor experiente, um entusiasta de gadgets ou
+            apenas curioso sobre as últimas tendências, aqui você encontrará
+            conteúdo relevante e perspicaz.
           </p>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <Image
-          src={johnDoe}
-          alt="Foto de John Doe"
-          class="w-full h-64 object-cover object-center"
-        />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">John Doe</h3>
-          <p class="text-gray-700">Fundador & Editor-chefe</p>
-        </div>
+  <section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-4">
+          Conheça a Nossa Equipe
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Os rostos por trás do conteúdo. Conheça os especialistas que tornam
+          tudo possível.
+        </p>
       </div>
 
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <Image
-          src={paulNewman}
-          alt="Foto de Paul Newman"
-          class="w-full h-64 object-cover object-center"
-        />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Paul Newman</h3>
-          <p class="text-gray-700">Redator Principal</p>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <Image
-          src={isabelaMartins}
-          alt="Foto de Johanna Johnson"
-          class="w-full h-64 object-cover object-center"
-        />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">
-            Isabela Martins
-          </h3>
-          <p class="text-gray-700">Analista de Tecnologia</p>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <Image
-          src={sofiaRossi}
-          alt="Foto de Sofia Rossi"
-          class="w-full h-64 object-cover object-center"
-        />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Sofia Rossi</h3>
-          <p class="text-gray-700">Gerente de Comunidade & Mídias Sociais</p>
-        </div>
-      </div>
-
-      <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-        <Image
-          src={emilyChen}
-          alt="Foto de Lucas Mendes"
-          class="w-full h-64 object-cover object-center"
-        />
-        <div class="p-6">
-          <h3 class="text-xl font-semibold text-gray-900 mb-2">Emily Chen</h3>
-          <p class="text-gray-700">Especialista em UX/UI</p>
-        </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        {
+          team.map((member) => (
+            <div class="group bg-white shadow-lg rounded-lg overflow-hidden transform hover:-translate-y-2 transition-transform duration-500">
+              <div class="relative">
+                <Image
+                  src={member.image}
+                  alt={`Foto de ${member.name}`}
+                  class="w-full h-72 object-cover object-center"
+                />
+                <div class="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                  <div class="flex space-x-6">
+                    {/* Renderização condicional dos ícones */}
+                    {member.social.twitter && (
+                      <a
+                        href={member.social.twitter}
+                        class="text-white hover:text-gray-300 transition-colors"
+                        aria-label="Twitter"
+                      >
+                        <i class="fa-brands fa-x-twitter fa-2x" />
+                      </a>
+                    )}
+                    {member.social.linkedin && (
+                      <a
+                        href={member.social.linkedin}
+                        class="text-white hover:text-blue-500 transition-colors"
+                        aria-label="LinkedIn"
+                      >
+                        <i class="fa-brands fa-linkedin fa-2x" />
+                      </a>
+                    )}
+                    {member.social.github && (
+                      <a
+                        href={member.social.github}
+                        class="text-white hover:text-gray-400 transition-colors"
+                        aria-label="GitHub"
+                      >
+                        <i class="fa-brands fa-github fa-2x" />
+                      </a>
+                    )}
+                    {member.social.instagram && (
+                      <a
+                        href={member.social.instagram}
+                        class="text-white hover:text-pink-500 transition-colors"
+                        aria-label="Instagram"
+                      >
+                        <i class="fa-brands fa-instagram fa-2x" />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+              <div class="p-6 text-center">
+                <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                  {member.name}
+                </h3>
+                <p class="text-gray-700">{member.role}</p>
+              </div>
+            </div>
+          ))
+        }
       </div>
     </div>
-  </div>
+  </section>
 </MainLayout>
