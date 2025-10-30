@@ -177,6 +177,60 @@ src/
 
 ---
 
+### 📝 Scriptora
+
+**📁 Pasta:** `scriptora/`  
+**🎯 Descrição:** Blog e site de conteúdo construído com Astro, focado em publicação de artigos usando as Content Collections do Astro. O projeto reúne um conjunto de componentes reutilizáveis (cards, navbar, busca, paginação), uma API simples de busca (serverless) e uma organização de conteúdo em Markdown para facilitar criação e manutenção editorial.
+
+![Banner - Scriptora](/readme_images/scriptora/scriptora.png)
+
+#### ✨ Funcionalidades
+
+- **📰 Gestão de Conteúdo:** Conteúdos em Markdown organizados em `src/content/blog/` com metadados (tags, data, autor)
+- **🔎 Busca Local:** Endpoint de busca (`src/pages/api/search.json.ts`) para pesquisar artigos
+- **🏷️ Tags & Páginas de Tag:** Filtragem por tags e listagem de artigos por tag
+- **📄 Páginas de Artigo Dinâmicas:** Roteamento para artigos em `src/pages/articles/[...slug].astro`
+- **🧩 Componentes Reutilizáveis:** `ArticleCard`, `SearchForm`, `Pagination`, `Navbar`, `Tags`
+- **📸 Gestão de Imagens:** Pastas de imagens públicas e otimização via integração com o pipeline de build do Astro
+- **📱 Responsividade:** Layouts e componentes otimizados para mobile e desktop
+
+#### 🛠️ Tecnologias Utilizadas
+
+- **Framework:** Astro
+- **Estilização:** Tailwind CSS  
+- **Tipagem:** TypeScript  
+- **Deploy:** Vercel
+- **Conteúdo:** Astro Content Collections (Markdown)
+
+#### 📂 Estrutura do Projeto
+
+```
+src/
+├── components/
+├── content/
+│   └── blog/
+├── layouts/
+├── pages/
+│   └── articles/
+└── assets/
+```
+
+#### 🔬 Recursos Demonstrados
+
+- **Uso de Content Collections:** Organização editorial via `src/content` com frontmatter e metadados
+- **Geração Estática com buscas server-side:** Combina SSG com um endpoint de busca para melhor UX
+- **Componentização do front-end:** Cards, listas e formulários reutilizáveis que facilitam escalabilidade
+- **Integração com Vercel:** Output otimizado para deploy e funções servidoras (serverless)
+
+#### 🎨 Características Técnicas
+
+- **SSG & ISR:** Conteúdo estático com possibilidade de atualização incremental dependendo do fluxo de publicação
+- **Arquitetura orientada a conteúdo:** Separação clara entre conteúdo (Markdown) e apresentação (Astro components)
+- **Performance-first:** Tailwind + Astro para pages leves e rápido Time-to-First-Byte
+- **Experiência editorial:** Fluxo simples para adicionar novos posts via Markdown
+
+---
+
 ## 👤 Sobre o Desenvolvedor
 
 <div align="center">
