@@ -1,49 +1,45 @@
 # Scriptora
 
-A tech blog built with Astro collections, Markdown & TypeScript. You can view the live demo [here](https://astro-blog-flame.vercel.app/)
+Um blog de tecnologia construído com Astro collections, Markdown e TypeScript. Você pode ver a demonstração ao vivo [aqui](https://scriptora-blog.vercel.app/).
 
-<img src="/readme_images/scriptora.png" />
+![Banner - Scriptora](/readme_images/scriptora.png)
 
-This project is from the Traversy Media members-only course - [Astro Quick Start](https://www.traversymedia.com/astro-quick-start)
+## Instalação
 
-The HTML files are available in the `blog-theme` folder. There is no CSS as we use all Tailwind classes.
-
-## Usage
-
-Install dependencies
+Instale as dependências
 
 ```sh
 npm install
 ```
 
-## 🧞 Commands
+## 🧞 Comandos
 
-All commands are run from the root of the project, from a terminal:
+Todos os comandos são executados a partir da raiz do projeto, em um terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+| Comando                   | Ação                                                   |
+| :------------------------ | :----------------------------------------------------- |
+| `npm install`             | Instala as dependências                                |
+| `npm run dev`             | Inicia o servidor de desenvolvimento em `localhost:4321` |
+| `npm run build`           | Compila o site de produção para `./dist/`             |
+| `npm run preview`         | Pré-visualiza a build localmente antes de publicar     |
+| `npm run astro ...`       | Executa comandos da CLI como `astro add`, `astro check` |
+| `npm run astro -- --help` | Mostra ajuda da CLI do Astro                           |
 
-## Creating Posts
+## Criando Posts
 
-Create a new `.md` file in the `content/blog` folder. Add the frontmatter and content.
+Crie um novo arquivo `.md` na pasta `content/blog`. Adicione o frontmatter e o conteúdo.
 
-Here is an example of frontmatter:
+Aqui está um exemplo de frontmatter:
 
 ```md
 ---
-title: "Os melhores laptops para desenvolvedores em 2024"
-pubDate: 2024-01-20
-author: "John Doe"
-image: "image1.png"
-tags: ["tecnologia", "hardware"]
-slug: the-best-laptops-for-developers-in-2024
+title: "Capturando os Momentos da Vida com a Excelência da Canon"
+pubDate: 2025-07-28
+author: "David Mitchell"
+image: "image6.png"
+tags: ["fotografia", "canon", "tecnologia"]
+slug: excelencia-canon
 ---
 ```
 
-Upload the image to `/public/images` and you're good to go.
+Faça o upload da imagem para `/public/images` e pronto.
