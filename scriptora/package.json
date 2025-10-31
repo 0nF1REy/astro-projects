@@ -1,12 +1,37 @@
 {
   "name": "scriptora",
   "type": "module",
-  "version": "3.0.0",
+  "version": "4.0.0",
+  "description": "Content-focused blog built with Astro — Markdown posts organized via Astro Content Collections, local search endpoint, reusable components, Tailwind CSS, and Vercel-ready output.",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
+  },
+  "keywords": [
+    "astro",
+    "blog",
+    "content",
+    "markdown",
+    "tailwind",
+    "vercel",
+    "typescript",
+    "static-site"
+  ],
+  "author": {
+    "name": "Alan Ryan da Silva Domingues",
+    "email": "alanryan619@gmail.com",
+    "url": "https://github.com/0nF1REy"
+  },
+  "license": "MIT",
+  "homepage": "https://scriptora-blog.vercel.app/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0nF1REy/astro-projects.git"
+  },
+  "bugs": {
+    "url": "https://github.com/0nF1REy/astro-projects/issues"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
