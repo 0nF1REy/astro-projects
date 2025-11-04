@@ -1,11 +1,30 @@
 // @ts-check
-import { defineConfig } from "astro/config";
-import node from "@astrojs/node";
+import cloudflare from "@astrojs/cloudflare";
 import clerk from "@clerk/astro";
+import { defineConfig } from "astro/config";
 
-// https://astro.build/config
+import react from "@astrojs/react";
+import svelte from "@astrojs/svelte";
+import tailwindcss from "@tailwindcss/vite";
+
 export default defineConfig({
-  integrations: [clerk()],
-  adapter: node({ mode: "standalone" }),
+  integrations: [
+    clerk({
+      appearance: {
+        cssLayerName: "clerk",
+      },
+    }),
+    react(),
+    svelte(),
+  ],
+  adapter: cloudflare({
+    platformProxy: {
+      enabled: true,
+    },
+  }),
+  vite: {
+    ssr: {},
+    plugins: [tailwindcss()],
+  },
   output: "server",
 });

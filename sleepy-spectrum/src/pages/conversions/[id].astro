@@ -1,0 +1,56 @@
+---
+import Layout from "@/layouts/BaseLayout.astro";
+import { icons } from "@/lib/icons";
+
+const { id } = Astro.params;
+const content = `
+# Sample Markdown Content
+
+This is a sample markdown content for the file with ID: ${id}.
+- Item 1
+- Item 2
+`;
+---
+
+<Layout title={`Teste.pdf - Markdown Converter`}>
+  <div>
+    <nav class="mx-auto max-w-7xl px-4 pt-10">
+      <a
+        href="/conversions"
+        class="inline-flex items-center gap-2 text-sm text-neutral-600 hover:text-neutral-800"
+      >
+        <svg
+          class="h-4 w-4"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M15 19l-7-7 7-7"></path>
+        </svg>
+        <span>Back to Conversions</span>
+      </a>
+    </nav>
+
+    <section id="item-view" class="mx-auto max-w-7xl px-4 pb-16">
+      <div class="mt-6 rounded-2xl border bg-white p-6">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col h-20 w-20 items-center">
+              <Fragment set:html={icons.xlsx} />
+              <div class="text-xs py-1">XLSX</div>
+            </div>
+          </div>
+          <div>
+            <div class="text-sm text-neutral-500">
+              File ID: {id}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

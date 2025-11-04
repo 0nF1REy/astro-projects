@@ -1,0 +1,96 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import FileUpload from "@/components/FileUpload.astro";
+import ConversionHistory from "@/components/ConversionHistory.astro";
+import { icons } from "@/lib/icons";
+---
+
+<Layout title="Markdown Converter - Convert Files to Optimized Markdown">
+  <main class="mx-auto max-w-6xl px-6 py-12">
+    <div class="mb-16">
+      <FileUpload />
+    </div>
+
+    <div>
+      <div class="flex items-center justify-between">
+        <h2 class="text-xl font-semibold text-foreground">
+          Histórico de conversão
+        </h2>
+        <div class="flex items-center gap-3">
+          <label for="model-select" class="text-sm text-muted-foreground">
+            Modelo:
+          </label>
+
+          <select
+            id="model-select"
+            class="rounded-lg border border-border bg-card px-3 py-2 text-sm text-foreground"
+          >
+            <option value="gpt-4o">GPT-4o</option>
+            <option value="gpt-4o-mini">GPT-4o Mini</option>
+            <option value="claude-3-5-sonnet-20241022">Claude 3.5 Sonnet</option
+            >
+            <option value="claude-3-5-haiku-20241022">Claude 3.5 Haiku</option>
+            <option value="gemini-2.0-flash-exp">Gemini 2.0 Flash</option>
+            <option value="gemini-1.5-pro">Gemini 1.5 Pro</option>
+            <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<!-- CONVERSION -->
+<section class="mt-8">
+  <div class="divide-y rounded-2xl border bg-white">
+    <article
+      class="flex flex-col md:flex-row items-start md:items-center justify-between"
+    >
+      <div class="flex min-w-0 items-center gap-6">
+        <div
+          class="flex flex-col h-20 w-20 items-center justify-center rounded-lg"
+        >
+          <Fragment set:html={icons.pdf} />
+          <div class="text-xs py-1">PDF</div>
+        </div>
+
+        <div class="items-center min-w-0">
+          <div class="text-xl truncate">product-requirements.pdf</div>
+        </div>
+
+        <span class="code text-sm text-neutral-500">Out 23, 2025</span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <div
+          class="mt-1 flex flex-wrap items-center gap-2 text-sm text-neutral-600"
+        >
+          <span
+            class="rounded-full bg-cyan-50 border border-cyan-400 px-4 py-1 text-cyan-700"
+          >
+            R$ 0,04
+          </span>
+
+          <span
+            class="rounded-full bg-neutral-900 border px-4 py-2 text-sm font-medium text-white"
+          >
+            2,847 tokens
+          </span>
+        </div>
+
+        <div class="mx-3 h-8 w-px bg-neutral-200"></div>
+
+        <a
+          href="conversions/123"
+          class="rounded-lg border px-4 py-2 text-sm text-neutral-700 hover:bg-neutral-100"
+        >
+          Visualizar
+        </a>
+
+        <button class="rounded-md border px-3 py-3 p-2" aria-label="Download">
+          <Fragment set:html={icons.download} />
+        </button>
+      </div>
+    </article>
+  </div>
+</section>

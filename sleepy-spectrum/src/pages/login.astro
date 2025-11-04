@@ -1,0 +1,12 @@
+---
+import AuthLayout, { appearance } from "@/layouts/AuthLayout.astro";
+import { SignIn } from "@clerk/astro/components";
+---
+
+<AuthLayout title="Sign In – Markdown Converter">
+  <SignIn
+    forceRedirectUrl="/conversions"
+    signUpUrl="/new-account"
+    appearance={appearance}
+  />
+</AuthLayout>

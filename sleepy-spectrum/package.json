@@ -25,8 +25,12 @@
     "url": "https://github.com/0nF1REy/astro-projects/issues"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^12.6.10",
     "@astrojs/node": "^9.4.6",
-    "@clerk/astro": "^2.13.6",
+    "@astrojs/react": "^4.4.1",
+    "@astrojs/svelte": "^7.2.1",
+    "@clerk/astro": "^2.14.2",
+    "@tailwindcss/vite": "^4.1.16",
     "astro": "^5.14.4"
   }
 }

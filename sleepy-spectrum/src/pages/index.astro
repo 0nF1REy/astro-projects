@@ -1,10 +1,10 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-
-import { UserButton } from "@clerk/astro/components";
+import AuthLayout from "@/layouts/AuthLayout.astro";
 ---
 
-<BaseLayout title="Clerk + Astro">
-  <a href="/teste2">Teste 2</a>
-  <UserButton />
-</BaseLayout>
+<AuthLayout server:defer title="Welcome - Markdown Converter">
+  <div class="flex items-center justify-center min-h-screen">
+    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-gray-900">
+    </div>
+  </div>
+</AuthLayout>
