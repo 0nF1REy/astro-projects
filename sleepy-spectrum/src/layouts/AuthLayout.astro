@@ -13,7 +13,7 @@ export const appearance = {
     formFieldInput: "p-6 text-base rounded-md transition-all",
     formFieldInputShowPasswordButton: "text-neutral-600 hover:text-neutral-900",
     formButtonPrimary:
-      "h-12 font-normal text-base bg-neutral-950 hover:bg-neutral-900",
+      "h-12 font-normal text-base bg-neutral-950 hover:bg-neutral-900 text-black",
     formResendCodeLink: "text-neutral-950 hover:underline font-medium text-sm",
     otpCodeFieldInput:
       "border border-neutral-300 rounded-md h-11 focus:ring-2 focus:ring-neutral-950",
@@ -45,5 +45,7 @@ const { title } = Astro.props;
         <slot />
       </div>
     </div>
+
+    <script src="../scripts/clerk-translate.js"></script>
   </body>
 </html>
