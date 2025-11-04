@@ -5,11 +5,11 @@ import {
   UserButton,
   SignInButton,
 } from "@clerk/astro/components";
-export const title = "Astro SaaS!";
----
-
 import "../styles/global.css";
 
+export const title = "Astro SaaS!";
+const { title: pageTitle = "" } = Astro.props;
+---
 
 <html lang="pt-BR">
   <head>
@@ -17,18 +17,25 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle || title}</title>
   </head>
   <body>
-    <header>
-      <h1>{title}</h1>
-      <nav>
-        <SignedOut>
-          <SignInButton mode="modal" />
-        </SignedOut>
-        <SignedIn>
-          <slot />
-        </SignedIn>
-      </nav>
+    <header class="px-6 py-4 border-b bg-white">
+      <div class="mx-auto max-w-6xl flex items-center justify-between">
+        <h1 class="text-lg font-semibold">{title}</h1>
+        <nav>
+          <SignedOut>
+            <SignInButton mode="modal" />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </nav>
+      </div>
     </header>
+
+    <main class="mx-auto max-w-6xl px-6 py-12">
+      <slot />
+    </main>
   </body>
 </html>
