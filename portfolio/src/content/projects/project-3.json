@@ -1,0 +1,11 @@
+{
+  "title": "Innovative Logo Design",
+  "client": "Brandify",
+  "work": "Branding",
+  "mainImage": "./images/project-3.jpg",
+  "otherImages": ["./images/project-4.jpg", "./images/project-2.jpg"],
+  "storyTitle": "Project Story",
+  "storyContent": "Creating a brand identity for Brandify was a thrilling experience. The goal was to design a logo that captures the essence of modern branding - bold, memorable, and versatile.",
+  "dayOneTitle": "Concept Development",
+  "dayOneContent": "The project started with extensive research into modern brand aesthetics. We developed a series of sketches that evolved into the final logo design, representing Brandify's commitment to excellence and innovation."
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Abstract Art Composition",
+  "client": "Art Expo 2023",
+  "work": "2D Digital Art",
+  "mainImage": "./images/project-2.jpg",
+  "otherImages": ["./images/project-1.jpg", "./images/project-3.jpg"],
+  "storyTitle": "Project Story",
+  "storyContent": "This project explores the realms of abstract art, pushing the boundaries of color, form, and composition. Each piece tells a unique story, capturing emotions and concepts beyond the physical form.",
+  "dayOneTitle": "Inception of Abstract Ideas",
+  "dayOneContent": "The journey began with an idea to express thoughts through non-figurative shapes and vibrant color palettes. We experimented with digital techniques to bring to life abstract forms that resonate with viewers on an emotional level."
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Conceptual Sculpture",
+  "client": "Virtual Gallery",
+  "work": "3D Modeling",
+  "mainImage": "./images/project-4.jpg",
+  "otherImages": ["./images/project-3.jpg", "./images/project-1.jpg"],
+  "storyTitle": "Project Story",
+  "storyContent": "This conceptual sculpture project brings together technology and art to create an immersive 3D experience. Each model captures a unique element of human emotion and physical form.",
+  "dayOneTitle": "From Idea to Form",
+  "dayOneContent": "The project was inspired by the human form and emotional expression. We aimed to create sculptures that could be experienced both visually and emotionally, combining digital techniques with traditional sculpting aesthetics."
+}

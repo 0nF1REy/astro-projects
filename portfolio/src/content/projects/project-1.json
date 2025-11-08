@@ -1,0 +1,11 @@
+{
+  "title": "Holographic Hand Study",
+  "client": "Digital Arts Magazine",
+  "work": "3D Visualization",
+  "mainImage": "./images/project-1.jpg",
+  "otherImages": ["./images/project-1.jpg", "./images/project-3.jpg"],
+  "storyTitle": "Project Story",
+  "storyContent": "The fact that photography has different meanings to different people is one of the many components of its appeal. Photography is such an important part of our life that it is now very difficult to imagine the world without it. We cannot imagine a wedding without the opportunity to capture it on film; we would not be able to remember the growing up of children or the holidays if we did not have pictures.",
+  "dayOneTitle": "Day One",
+  "dayOneContent": "Everywhere we are haunted by photography in newspapers, magazines, advertisements on television on the Internet, but we still crave even more. And what helps to achieve a good result? We will look at these issues and some of the possibilities of photography and explain that it is a combination of thought imagination, visual design, technical skills and organizational skills."
+}
