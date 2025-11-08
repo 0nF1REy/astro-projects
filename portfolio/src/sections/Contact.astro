@@ -1,0 +1,129 @@
+<footer id="contact" class="pt-section">
+  <div class="container">
+    <div class="content">
+      <div class="title">
+        <h3>Entre em Contato Comigo</h3>
+        <a class="mail" href="mailto:alanryan619@gmail.com" target="_blank">
+          alanryan619@gmail.com
+        </a>
+      </div>
+
+      <div class="address-info">
+        <img src="/logo.svg" alt="logo" />
+
+        <div>
+          <a class="phone" href="tel:+5515996209364">+55 15 99620-9364</a>
+
+          <div class="social-links">
+            <a href="#" aria-label="Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+
+            <a href="#" aria-label="Twitter">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="copyright">
+      &copy; {new Date().getFullYear()}. Alan Ryan da Silva Domingues. Todos os
+      direitos reservados.
+    </p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--secondary-clr-900);
+    text-align: center;
+  }
+
+  .title {
+    margin-bottom: 3rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .mail {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--primary-clr-400);
+    text-decoration: underline;
+  }
+
+  img {
+    margin-inline: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .address-info {
+    border-bottom: 1px solid var(--secondary-clr-400);
+    padding-bottom: 2rem;
+  }
+
+  .phone {
+    color: var(--secondary-clr-100);
+    transition: color 0.3s ease-in;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .phone:hover {
+    color: var(--primary-clr-400);
+  }
+
+  .social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .social-links a {
+    font-size: 1.5rem;
+    color: var(--secondary-clr-100);
+    transition: all 0.3s ease-in;
+  }
+
+  .social-links a:hover {
+    color: var(--primary-clr-400);
+    transform: translateY(-0.3rem);
+  }
+
+  .copyright {
+    padding: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .address-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    img {
+      margin: unset;
+    }
+
+    .mail {
+      font-size: 2.5rem;
+    }
+
+    h3 {
+      margin-bottom: 1rem;
+    }
+
+    .phone {
+      margin-bottom: 0.5rem;
+    }
+  }
+</style>
