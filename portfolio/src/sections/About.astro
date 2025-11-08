@@ -1,0 +1,95 @@
+---
+import { Image } from "astro:assets";
+import Button from "../components/Button.astro";
+import AboutImage from "../assets/about-image.jpg";
+---
+
+<section id="about me" class="about pt-section">
+  <div class="container">
+    <div class="grid">
+      <div class="about__content">
+        <h2>Sobre mim</h2>
+        <p>
+          Olá, sou Alan Ryan — desenvolvedor de sistemas, natural de Itapeva-SP.
+          Tenho interesse por tecnologia e design, buscando sempre unir o lado
+          técnico e humano em meus projetos. Gosto de criar soluções práticas,
+          organizadas e com propósito, explorando o aprendizado constante em
+          programação e inovação digital.
+        </p>
+        <Button text="Saiba mais" href="/" />
+      </div>
+
+      <div class="about__image">
+        <Image src={AboutImage} alt="Foto de Alan Ryan" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  .about__content {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .about__content p {
+    margin-bottom: 2rem;
+  }
+
+  .about__image {
+    position: relative;
+  }
+
+  .about__image::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -0.5rem;
+    width: 25px;
+    height: 100px;
+    border: 1.5px solid var(--primary-clr-400);
+    border-radius: 5rem;
+  }
+
+  .about__image::after {
+    content: "";
+    position: absolute;
+    top: -2.5rem;
+    right: 2rem;
+    width: 20px;
+    height: 80px;
+    border: 1.5px solid var(--primary-clr-400);
+    border-radius: 5rem;
+    rotate: 90deg;
+  }
+
+  .about__image img {
+    border-radius: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    h2 {
+      text-align: left;
+    }
+
+    .about__content {
+      text-align: left;
+    }
+
+    .about__content p {
+      font-size: 1.1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 4rem;
+      place-items: center;
+    }
+  }
+</style>
