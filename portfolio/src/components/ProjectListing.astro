@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+
+const { title, mainImage, client, work } = project.data;
+---
+
+<article class="project">
+  <a class="image" href={`/project/${project.id}`} aria-label={title}>
+    <Image width={500} height={500} src={mainImage} alt={title} />
+  </a>
+
+  <a href={`/project/${project.id}`} class="title" aria-label={title}>
+    <h3>{title}</h3>
+  </a>
+
+  <div class="details">
+    <div class="flex">
+      <p>Cliente:</p>
+      <span>{client}</span>
+    </div>
+
+    <div class="flex">
+      <p>Trabalho:</p>
+      <span>{work}</span>
+    </div>
+  </div>
+</article>
+
+<style>
+  .project:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  img {
+    margin-bottom: 1.5rem;
+    border-radius: 0.5rem;
+    width: 100%;
+  }
+
+  .title {
+    position: relative;
+    color: var(--secondary-clr-100);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .title::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 4px;
+    border-radius: 0.4rem;
+    background-color: var(--primary-clr-400);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .title:hover {
+    color: var(--primary-clr-400);
+  }
+
+  .title:hover::after {
+    transform: translateY(-4px);
+  }
+
+  .flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .flex:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  .details p {
+    color: var(--secondary-clr-300);
+  }
+</style>
