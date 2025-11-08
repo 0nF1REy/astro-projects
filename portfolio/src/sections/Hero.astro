@@ -1,0 +1,47 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero__conten">
+      <h1>Design de <span>Logotipo Dinâmico</span> para a sua Marca</h1>
+      <Button text="Ver projetos" href="#work" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url("../assets/hero-bg.png");
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .hero__content {
+    max-width: 800px;
+    margin-inline: auto;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+
+  span {
+    color: var(--primary-clr-400);
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 3.5rem;
+    }
+  }
+</style>
