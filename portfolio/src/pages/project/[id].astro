@@ -1,0 +1,127 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Layout from "../../layout/Layout.astro";
+import { Image } from "astro:assets";
+
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return projects.map((project: CollectionEntry<"projects">) => ({
+    params: { id: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props as { project: CollectionEntry<"projects"> };
+
+const {
+  title,
+  mainImage,
+  otherImages,
+  storyTitle,
+  storyContent,
+  dayOneTitle,
+  dayOneContent,
+} = project.data;
+---
+
+<Layout {title}>
+  <section class="pt-section">
+    <div class="container">
+      <div class="title">
+        <h2>{title}</h2>
+        <a href="/#my work" aria-label="Retornar à seção de projetos">
+          Retornar aos Projetos
+        </a>
+      </div>
+
+      <Image
+        src={mainImage}
+        width={500}
+        height={500}
+        class="main-image"
+        alt={title}
+      />
+
+      <div class="story">
+        <h3>{storyTitle}</h3>
+        <p>{storyContent}</p>
+      </div>
+
+      <div class="other-images">
+        {
+          otherImages.map((image: string) => (
+            <Image src={image} width={500} height={500} alt={title} />
+          ))
+        }
+      </div>
+
+      <div class="story">
+        <h3>{dayOneTitle}</h3>
+        <p>{dayOneContent}</p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  h2 {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+
+  a {
+    color: var(--secondary-clr-100);
+    transition: color 0.3s ease-in-out;
+  }
+
+  a:hover {
+    color: var(--primary-clr-400);
+  }
+
+  img {
+    border-radius: 1rem;
+    width: 100%;
+  }
+
+  .title {
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid var(--secondary-clr-400);
+  }
+
+  .main-image {
+    margin-inline: auto;
+    margin-bottom: 1.5rem;
+  }
+
+  .story {
+    max-width: 700px;
+    margin-inline: auto;
+    margin-bottom: 2rem;
+  }
+
+  .story h3 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .other-images {
+    margin-bottom: 2rem;
+  }
+
+  .other-images img:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .other-images {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+</style>
