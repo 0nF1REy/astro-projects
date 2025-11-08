@@ -1,5 +1,19 @@
 ---
 import "@fontsource/poppins";
+import "../styles/global.css";
+import Header from "../components/Header";
+import { ClientRouter } from "astro:transitions";
+import Contact from "../sections/Contact.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "AARONN Logo Design",
+  description = "Adaptive Logo Design for your Brand",
+} = Astro.props;
 ---
 
 <html lang="pt-BR">
@@ -8,9 +22,20 @@ import "@fontsource/poppins";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <meta name="description" content={description} />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>{title}</title>
+    <ClientRouter />
   </head>
   <body>
+    <Header client:load />
     <slot />
+    <Contact />
   </body>
 </html>
