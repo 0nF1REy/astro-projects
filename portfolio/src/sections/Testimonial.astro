@@ -1,0 +1,145 @@
+---
+import { Image } from "astro:assets";
+import Person1 from "../assets/person-1.jpg";
+import Person2 from "../assets/person-2.png";
+
+const testimonialData = [
+  {
+    name: "Emily C",
+    rating: 5,
+    handle: "@emilyc",
+    image: Person1,
+    description:
+      "Trabalhar com o Alan foi um verdadeiro prazer! Ele pegou minhas ideias vagas e as transformou em um logotipo incrível que representa perfeitamente minha marca.",
+  },
+
+  {
+    name: "Paul N",
+    rating: 5,
+    handle: "@pauln",
+    image: Person2,
+    description:
+      "Eu estava tendo dificuldade em encontrar um designer que conseguisse capturar a essência da minha marca até conhecer o Alan. O design dele foi exatamente o que eu procurava.",
+  },
+];
+---
+
+<section class="pt-section">
+  <div class="container">
+    <h2>O que as pessoas estão dizendo</h2>
+
+    <div class="content">
+      {
+        testimonialData.map((data) => (
+          <div class="testimonial">
+            <div class="rating" aria-label={`${data.rating} stars`}>
+              {Array(data.rating)
+                .fill(0)
+                .map((_) => (
+                  <i
+                    class="fas fa-star"
+                    style={{ color: "var(--primary-clr-400)" }}
+                  />
+                ))}
+            </div>
+
+            <p class="description">{data.description}</p>
+
+            <div class="person">
+              <Image
+                width={500}
+                height={500}
+                src={data.image}
+                alt={data.name}
+              />
+
+              <div class="name">
+                <h4>{data.name}</h4>
+                <p>{data.handle}</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  section {
+    margin-bottom: 7rem;
+  }
+
+  .content {
+    background-color: var(--secondary-clr-400);
+    padding: 2rem;
+    border-radius: 1rem;
+    position: relative;
+  }
+
+  .content::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 2px;
+    background-color: var(--secondary-clr-300);
+  }
+
+  .rating {
+    margin-bottom: 1rem;
+  }
+
+  .rating i {
+    margin-right: 0.3rem;
+  }
+
+  .testimonial:not(:last-child) {
+    margin-bottom: 2.5rem;
+  }
+
+  .description {
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  img {
+    --size: 40px;
+    width: var(--size);
+    height: var(--size);
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .person {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .name p {
+    color: var(--secondary-clr-200);
+  }
+
+  @media (min-width: 768px) {
+    .content {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      padding: 4rem 2.5rem;
+    }
+
+    .content::after {
+      height: 85%;
+      width: 2px;
+    }
+
+    .testimonial:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+</style>
