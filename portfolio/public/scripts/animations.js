@@ -41,14 +41,17 @@
     (function hero() {
       const heroContent = document.querySelector(".hero__content");
       if (!heroContent) return;
+
       const timeline = gsap.timeline({
         defaults: { duration: 0.9, ease: "power3.out" },
       });
+
       timeline.from(".hero__content h1", { y: 40, opacity: 0 });
-      timeline.from(
-        [".hero__content p", ".hero__content .btn", ".hero__content a"],
-        { y: 18, opacity: 0, stagger: 0.12 },
-        "-=0.45"
+
+      timeline.fromTo(
+        [".hero__content p", ".hero__content a"],
+        { y: 18, opacity: 0 },
+        { y: 0, opacity: 1, stagger: 0.12 }
       );
     })();
 
