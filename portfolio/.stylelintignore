@@ -1,0 +1,7 @@
+node_modules/
+.astro/
+dist/
+.output/
+.vercel/
+public/_astro/
+public/scripts/animations.js

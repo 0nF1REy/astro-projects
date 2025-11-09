@@ -109,6 +109,7 @@ const testimonialData = [
 
   img {
     --size: 40px;
+
     width: var(--size);
     height: var(--size);
     object-fit: cover;
@@ -125,7 +126,7 @@ const testimonialData = [
     color: var(--secondary-clr-200);
   }
 
-  @media (min-width: 768px) {
+  @media (width >= 768px) {
     .content {
       display: grid;
       grid-template-columns: repeat(2, 1fr);

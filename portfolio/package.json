@@ -7,7 +7,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint:css": "stylelint \"src/**/*.{css,astro,html,scss}\" --allow-empty-input",
+    "lint:css:fix": "stylelint --fix \"src/**/*.{css,astro,html,scss}\""
   },
   "keywords": [
     "astro",
@@ -39,5 +41,11 @@
     "@fontsource/poppins": "^5.2.7",
     "astro": "^5.15.4",
     "gsap": "^3.13.0"
+  },
+  "devDependencies": {
+    "postcss-html": "^1.8.0",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-order": "^7.0.0"
   }
 }
