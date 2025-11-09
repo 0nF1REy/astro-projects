@@ -31,7 +31,7 @@ const Header = () => {
         <div className="header__content">
           {/* Logo */}
           <a href="/" className="logo">
-            <img width={100} height={100} src="/logo.svg" alt="Logo" />
+            <img width={100} height={100} src="/logotipo.svg" alt="Logo" />
           </a>
 
           {/* Navbar */}
