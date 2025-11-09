@@ -31,7 +31,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className={`header ${isScrolling ? "scrolling" : ""}`}>
+    <header className={isScrolling ? "header scrolling" : "header"}>
       <div className="container">
         <div className="header__content">
           {/* Logo */}

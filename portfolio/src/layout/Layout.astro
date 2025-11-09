@@ -34,11 +34,19 @@ const {
       referrerpolicy="no-referrer"
     />
     <title>{title}</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"
+      defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"
+      defer></script>
     <ClientRouter />
   </head>
   <body>
     <Header client:load />
     <slot />
     <Contact />
+
+    <script src="/scripts/animations.js" is:inline></script>
   </body>
 </html>
