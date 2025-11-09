@@ -138,21 +138,23 @@
       const contactRoot =
         document.querySelector("#contact") || document.querySelector("footer");
       if (!contactRoot) return;
-      gsap.from(
+      gsap.fromTo(
         contactRoot.querySelectorAll(
           ".title, .mail, .social-links li, .address-info"
         ),
+        { y: 28, opacity: 0 },
         {
           scrollTrigger: {
             trigger: contactRoot,
             start: "top 85%",
             toggleActions: "play none none reverse",
           },
-          y: 28,
-          opacity: 0,
+          y: 0,
+          opacity: 1,
           stagger: 0.12,
           duration: 0.8,
           ease: "power3.out",
+          immediateRender: false,
         }
       );
     })();
