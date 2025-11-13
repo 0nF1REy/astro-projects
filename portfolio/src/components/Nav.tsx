@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 const links = [
-  { name: "início", href: "/#home" },
-  { name: "sobre mim", href: "/#about" },
-  { name: "projetos", href: "/#work" },
-  { name: "contato", href: "/#contact" },
+  { label: "início", href: "/#home", id: "home" },
+  { label: "sobre mim", href: "/#about", id: "about" },
+  { label: "projetos", href: "/#work", id: "work" },
+  { label: "contato", href: "/#contact", id: "contact" },
 ];
 
 const Nav = ({ isClicked }: { isClicked: boolean }) => {
@@ -16,6 +16,7 @@ const Nav = ({ isClicked }: { isClicked: boolean }) => {
     if (targetElement) {
       window.scrollTo({
         top: targetElement.offsetTop - 70,
+        behavior: "smooth",
       });
     }
 
@@ -25,14 +26,17 @@ const Nav = ({ isClicked }: { isClicked: boolean }) => {
   return (
     <nav className={`nav ${isClicked ? "showMenu" : ""}`}>
       <ul className="menu">
-        {links.map(({ name, href }) => (
-          <li key={name}>
+        {links.map(({ label, href, id }) => (
+          <li key={label}>
             <a
-              className={`${active === name ? "active" : ""}`}
+              className={`${active === id ? "active" : ""}`}
               href={href}
-              onClick={() => smoothScrollTo(name)}
+              onClick={(e) => {
+                e.preventDefault();
+                smoothScrollTo(id);
+              }}
             >
-              {name}
+              {label}
             </a>
           </li>
         ))}
